@@ -46,19 +46,27 @@ We'll go through the following tasks to accomplish this:
    ```
 
 > [!NOTE] 
-> The **id** is the connection between the UI and the code. This value is defined as **COMMAND_ID** in the **discount/product/SearchCommand.ts** files. See how each of these files has a unique **COMMAND_ID** that corresponds to the value of **id**.
+> The **id** is the connection between the UI and the code. This value is defined as **COMMAND_ID** in the **discount\product\SearchCommand.ts** files. See how each of these files has a unique **COMMAND_ID** that corresponds to the value of **id**.
 
 ## Task 2 - Create a handler for the 'companySearch' command
 
 In this exercise, we'll copy some of the existing code to create new handlers for our commands. 
 
-1. In Visual Studio Code, copy '**productSearchCommand.ts**' and paste into the same folder to create a copy. Rename this file **customerSearchCommand.ts**.
+1. In Visual Studio Code under your **working directory**, navigate to **.\src\messageExtensions** and copy '**productSearchCommand.ts**' and paste into the same folder to create a copy. Rename this file **customerSearchCommand.ts**.
+
+1. Change line 7 to:
+
+    ```typescript
+    import { searchProductsByCustomer } from "../northwindDB/products";
+    ```
 
 1. Change line 10 to:
 
    ```javascript
    const COMMAND_ID = "companySearch";
    ```
+
+
 
 1. Replace the content of **handleTeamsMessagingExtensionQuery** with:
 

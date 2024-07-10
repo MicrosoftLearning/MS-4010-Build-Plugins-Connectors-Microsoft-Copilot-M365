@@ -34,7 +34,7 @@ SECRET_STORAGE_ACCOUNT_CONNECTION_STRING=UseDevelopmentStorage=true
 
 ## Task 2 - Run the application locally
 
-1. In Visual Studio Code with the **working folder** open, press **F5** to start debugging, or select the start button 1️⃣. 
+1. In Visual Studio Code with the **working folder** open, press **F5** to start debugging, or select the start button 1️⃣.
 
 1. Select **Debug in Teams (Edge)** 2️⃣.
 
@@ -180,9 +180,9 @@ Read the descriptions in the JSON above carefully when entering a query. Try ent
 
 - **_c,bev_** - find products in categories beginning with **bev** and names that begin with **c**.
 
-- **_,,out_** - find products that are out of stock.
+- **_,,out,_** - find products that are out of stock.
 
-- **_,,on,London_** - find products that are on order from suppliers in London.
+- **_,,in,London_** - find products that are on order from suppliers in London.
 
 - **_tofu,produce,,Osaka_** - find products in the **produce** category with suppliers in **Osaka** and names that begin with **tofu**.
 
@@ -200,7 +200,7 @@ Let's take a brief detour so you can see how message extensions work in Microsof
 
     ![Screenshot of creating a new email in Outlook.](../media/2-04-test-message-extension-outlook-02.png)
 
-1. Add a **recipient** 1️⃣ and a **subject** 2️⃣, then position your cursor in the body of the message 3️⃣. You can even type something. When you're ready, select the **app button** in the toolbar 4️⃣.
+1. Add a **recipient** 1️⃣ and a **subject** 2️⃣, then position your cursor in the body of the message 3️⃣. You can even type something. When you're ready, choose **Insert** from the toolbar and select **Apps** in the toolbar 4️⃣.
 
     ![Screenshot of selecting the App button while composing an Outlook message.](../media/2-04-test-message-extension-outlook-03.png)
 

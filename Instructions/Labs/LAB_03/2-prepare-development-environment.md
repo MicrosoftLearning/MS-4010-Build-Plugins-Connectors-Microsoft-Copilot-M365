@@ -82,18 +82,11 @@ The sample application includes some documents for Copilot to reference during t
 
 By doing this task early, there's a good chance that the Microsoft 365 search engine will have discovered them by the time you're ready for them.
 
-## Task 4 - Install and set up Teams Toolkit for Visual Studio Code
+## Task 4 - Configure the Teams Toolkit for Visual Studio Code
 
 In this task, you'll install the current version of [Teams Toolkit for Visual Studio Code](https://learn.microsoft.com/microsoftteams/platform/toolkit/teams-toolkit-fundamentals?pivots=visual-studio-code-v5). The easiest way to do this is from right within Visual Studio Code.
 
-> [!NOTE]
-> Do not install the pre-release version as it hasn't been tested with this lab.
-
 1. Open your **working folder** in Visual Studio Code. You may be asked to trust the authors of this folder; if so, please do.
-
-1. In the left sidebar, select **Extensions** 1️⃣. Enter the word **teams** into the search box 2️⃣ and locate **Teams Toolkit** in the search results. Select **Install** 3️⃣.
-
-    ![Screenshot of installing Teams Toolkit in Visual Studio Code.](../media/1-04-install-teams-toolkit-01.png)
 
 1. Now select the **Teams Toolkit** icon in the left 1️⃣. If it offers options to create a new project, you're probably in the wrong folder. In the **Visual Studio Code file menu** select **Open Folder** and directly open the **msgext-northwind-inventory-ts** folder. You should see sections for Accounts, Environment, etc. as shown below.
 
@@ -103,7 +96,7 @@ In this task, you'll install the current version of [Teams Toolkit for Visual St
 
 1. A browser window will open and offer to log into Microsoft 365. When it says **You are signed in now and close this page**, please do so.
 
-1. Lastly, verify that a green checkmark appears next to **Sideloading enabled**. If it doesn't, that means that your user account doesn't have permission to upload Teams applications. This permission is "off" by default; here are [instructions for enabling users to upload custom apps](https://learn.microsoft.com/microsoftteams/teams-custom-app-policies-and-settings#allow-users-to-upload-custom-apps)
+1. Lastly, verify that a green checkmark appears next to **Custom app Upload enabled**. If it doesn't, that means that your user account doesn't have permission to upload Teams applications. This permission is "off" by default; here are [instructions for enabling users to upload custom apps](https://learn.microsoft.com/microsoftteams/teams-custom-app-policies-and-settings#allow-users-to-upload-custom-apps)
 
     ![Screenshot of checking that sideloading is enabled.](../media/1-04-setup-teams-toolkit-03.png)
 

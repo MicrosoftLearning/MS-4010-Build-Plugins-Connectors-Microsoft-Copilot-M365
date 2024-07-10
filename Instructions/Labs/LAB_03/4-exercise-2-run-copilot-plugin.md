@@ -13,11 +13,6 @@ In this exercise, you'll run the application as a plugin for Microsoft Copilot f
 
 ## Task 1 - Test in Microsoft Copilot for Microsoft 365 (single parameter)
 
-1. From within Microsoft Teams, toggle the **Try the new Teams** switch to move to the **New Teams** client application.
-
-    > [!IMPORTANT]
-    > Microsoft Copilot for Microsoft 365 only works in the **New Teams** experience. Please don't miss this task! If you restart your debugger after switching to **New Teams**, you may get an error message after the debugger starts. This is a known problem; please just close the error dialog and continue testing.
-
 1. In the application rail on the left, select the **Copilot** app.
 
 1. On the right side of the compose box, select the **plugin** icon 1️⃣, and enable the **Northwind Inventory** plugin 2️⃣.
