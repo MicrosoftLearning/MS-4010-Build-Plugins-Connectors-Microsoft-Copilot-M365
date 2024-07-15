@@ -19,8 +19,8 @@ Start, by registering a new Entra app registration, which the custom Graph conne
 In a web browser:
 
 1. Go to the **Azure portal** at [https://portal.azure.com](https://portal.azure.com).
-1. From the navigation, select **Microsoft Entra ID**.
-1. From the side navigation, select **App registrations**.
+1. From the navigation, select **view** underneath **Microsoft Entra ID**.
+1. From the side navigation, expand **Manage** and select **App registrations**.
 1. In the top navigation, select **New registration**.
 1. Specify the following values:
    1. **Name:** MSGraph docs Graph connector
@@ -34,8 +34,9 @@ Because this custom Graph connector runs without user interaction, you need to c
 
 Continuing in the web browser:
 
-1. From the side navigation, select **Certificates & secrets**.
-1. Activate the **Client secrets** tab and select the **New client secret** button.
+1. From the side navigation, expand **Manage** and select **Certificates & secrets**.
+1. Select the **Client secrets** tab and then select **New client secret**.
+1. Enter a **description** of **MSGraph docs Graph connector secret**.
 1. Create the secret by selecting **Add**.
 1. Copy the **Value** of the newly created secret. You'll need it later.
 
@@ -60,11 +61,12 @@ Continuing in the web browser:
 
 After you configured the Entra app registration, the next step is to create a console app, where you'll implement the Graph connector's code.
 
-In a terminal:
+Open a Windows terminal to create a newe console application:
 
-1. Create a new folder and change the working directory to it.
-1. Create a new console application by running `dotnet new console`.
+1. Create a new folder by entering `mkdir documents\console_app` and then navigate to the new folder by entering `cd .\documents\console_app`.
+1. Create a new console application by running `dotnet new console`
 1. Add dependencies, which you need to build the connector:
+   1. Add Nuget.org as a package source, run `dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org`
    1. To add the library needed to authenticate with Microsoft 365, run `dotnet add package Azure.Identity`.
    1. To add the client library to communicate with Graph APIs, run `dotnet add package Microsoft.Graph`.
    1. To add the library needed to work with user secrets, which you'll configure in the next step, run `dotnet add package Microsoft.Extensions.Configuration.UserSecrets`.
@@ -88,9 +90,9 @@ In a terminal:
 
 ## Task 6 - Create Microsoft Graph client
 
-Custom Graph connectors use Microsoft Graph API to manage their external connection and -items. Start, by creating an instance of the `GraphServiceClient` class from the **Microsoft.Graph** NuGet package you installed in the project.
+Custom Graph connectors use Microsoft Graph API to manage their external connection and items. Start by creating an instance of the `GraphServiceClient` class from the **Microsoft.Graph** NuGet package you installed in the project.
 
-1. Open your project in your code editor
+1. Open your project in your Visual Studio 2022.
 1. In your project, add a new code file named **GraphService.cs**.
 1. In the file, start by adding references to the namespaces you'll use, by adding:
 
@@ -141,7 +143,7 @@ Custom Graph connectors use Microsoft Graph API to manage their external connect
    }
    ```
 
-1. Create a new instance of `GraphServiceClient`, using as a credential the information about the Entra app registration you stored previously:
+1. Inside the getting, create a new instance of `GraphServiceClient`, using a credential with the information about the Entra app registration you stored previously:
 
    ```csharp
    var builder = new ConfigurationBuilder().AddUserSecrets<GraphService>();
@@ -174,7 +176,7 @@ Custom Graph connectors use Microsoft Graph API to manage their external connect
        {
          if (_client is null)
          {
-           var builder = new ConfigurationBuilder().   AddUserSecrets<GraphService>();
+           var builder = new ConfigurationBuilder().AddUserSecrets<GraphService>();
            var config = builder.Build();
      
            var clientId = config["EntraId:ClientId"];
@@ -226,7 +228,7 @@ In the code editor:
        {
          Id = "msgraphdocs",
          Name = "Microsoft Graph documentation",
-         Description = "Documentation for Microsoft Graph API which    explains what Microsoft Graph is and how to use it."
+         Description = "Documentation for Microsoft Graph API which explains what Microsoft Graph is and how to use it."
        };
      }
    }
@@ -389,6 +391,7 @@ In the code editor:
    ```csharp
    async static Task CreateConnection()
    {
+
    }
    ```
 

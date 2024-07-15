@@ -16,7 +16,7 @@ This exercise will take you about **XX minutes** to complete.
 
 To follow this exercise, copy the sample content files used in this exercise from [GitHub](https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/dotnet-csharp-graphdocs/content) and store them in your project, in a folder named **content**.
 
-:::image type="content" source="../media/6-content-files.png" alt-text="Screenshot of a code editor showing the content files used in this exercise.":::
+![Screenshot of a code editor showing the content files used in this exercise.](../media/6-content-files.png)
 
 For the code to work correctly, the **content** folder and its contents must be copied to the build output folder.
 

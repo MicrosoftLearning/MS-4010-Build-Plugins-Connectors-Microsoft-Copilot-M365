@@ -8,7 +8,7 @@ lab:
 
 In this exercise, you create a message extension with a search command. You first scaffold a project using a Teams Toolkit project template, then update it to configure it use an Azure AI Bot Service resource for local development. You create a Dev Tunnel to enable communication between the bot service and your locally running web service. You then prepare your app to provision the required resources. Finally, you run and debug your message extension and test it in Microsoft Teams.
 
-:::image type="content" source="../media/2-search-results-nuget.png" alt-text="Screenshot of search results returned by a search based message extension in Microsoft Teams." lightbox="../media/2-search-results-nuget.png":::
+![Screenshot of search results returned by a search based message extension in Microsoft Teams.](../media/2-search-results-nuget.png)
 
 ## Task 1 - Create a new project with Teams Toolkit for Visual Studio
 
@@ -19,7 +19,7 @@ Start by creating a new project.
 1. In the Create a new project screen, expand the **All platforms** dropdown, then select **Microsoft Teams**. Select **Next** to continue.
 1. In the Configure your new project screen. Specify the following values:
     1. **Project name**: MsgExtProductSupport
-    1. **Location**: Select a location of your choice
+    1. **Location**: Choose the default location
     1. **Place solution and project in the same directory**: Checked
 1. Scaffold the project by selecting **Create**
 1. In the Create a new Teams application dialog, expand the **All app types** dropdown, then select **Message Extension**
@@ -149,7 +149,7 @@ The last step is to update the Teams Toolkit project file. Replace the steps tha
 Continuing in Visual Studio:
 
 1. In the project root folder, open **teamsapp.local.yml**
-1. In the file, find the step that uses the **botAadApp/create** action and replace it with:
+1. In the file, find the step that uses the **botAadApp/create** action (line 18) and replace it with:
 
     ```yml
       - uses: aadApp/create
@@ -181,7 +181,7 @@ Continuing in Visual Studio:
           bicepCliVersion: v0.9.1
     ```
 
-1. In the file, remove the step that uses the **botFramework/create** action
+1. In the file, remove the step that uses the **botFramework/create** action (lines 54-63).
 1. Save your changes.
 
 The app registration is provisioned in two steps, first the **aadApp/create** action creates a new multitenant app registration with a client secret, writing its outputs to the **.env.local** file as environment variables. Then the **aadApp/update** action uses the **entra.bot.manifest.json** file to update the app registration.
@@ -192,18 +192,18 @@ The last step uses the **arm/deploy** action to provision the Azure AI Bot Servi
 
 When the user interacts with your message extension, the Bot service sends requests to the web service. During development, your web service runs locally on your machine. To allow the Bot service to reach your web service, you need to expose it beyond your machine using a Dev tunnel.
 
-:::image type="content" source="../media/18-select-dev-tunnel.png" alt-text="Screenshot of the expanded Dev tunnels menu in Visual Studio." lightbox="../media/18-select-dev-tunnel.png":::
+![Screenshot of the expanded Dev tunnels menu in Visual Studio.](../media/18-select-dev-tunnel.png)
 
 Continuing in Visual Studio:
 
-1. On the toolbar, expand the debug profile menu by **selecting the drop down next to Microsoft Teams (browser)** button
+1. On the toolbar, expand the debug profile menu by selecting the drop down next to **Microsoft Teams (browser) button** or **Start Project**.
 1. Expand the **Dev Tunnels (no active tunnel)** menu and select **Create a Tunnel…**
 1. In the dialog, specify the following values:
-    1. **Account**: Select an account of your choice
+    1. **Account**: Login with your Microsoft 365 user account.
     1. **Name**: MsgExtProductSupport
     1. **Tunnel Type**: Temporary
     1. **Access**: Public
-1. Create the tunnel by selecting **OK**, a prompt is shown stating that the new tunnel is now the current active tunnel
+1. Create the tunnel by selecting **OK** and in the resulting window, right-click on the tunnel and select **Make Active Tunnel** and you should see a checkmark next to the tunnel.
 1. Close the prompt by selecting **OK**
 
 ## Task 4 - Update app manifest
@@ -212,9 +212,9 @@ The app manifest describes the features and capabilities of the app. Update prop
 
 First, download the app icons and add them to the project.
 
-:::image type="content" source="../media/app/color-local.png" alt-text="Color icon used for local development." lightbox="../media/app/color-local.png":::
+![Color icon used for local development.](../media/app/color-local.png)
 
-:::image type="content" source="../media/app/color-dev.png" alt-text="Color icon used for remote development." lightbox="../media/app/color-dev.png":::
+![Color icon used for remote development.](../media/app/color-dev.png)
 
 1. Download **color-local.png** and **color-dev.png**
 1. In the **appPackage** folder, add **color-local.png** and **color-dev.png**
@@ -236,10 +236,9 @@ Continuing in Visual Studio:
 Finally, update the icons, name, and description objects in the app manifest file.
 
 1. In the **appPackage** folder, open the file named **manifest.json**
-1. In the file, update the **icons**, **name, and **description** objects with:
+1. In the file, update the **icons**, **name**, and **description** objects with:
 
     ```json
-    {
         "icons": {
             "color": "color-${{TEAMSFX_ENV}}.png",
             "outline": "outline.png"
@@ -251,8 +250,7 @@ Finally, update the icons, name, and description objects in the app manifest fil
         "description": {
             "short": "Product look up tool.",
             "full": "Get real-time product information and share them in a conversation."
-        }
-    }
+        },
     ```
 
 1. Save your changes
@@ -261,7 +259,7 @@ Finally, update the icons, name, and description objects in the app manifest fil
 
 With everything now in place, using Teams Toolkit, run the Prepare Teams App Dependencies process to provision the required resources.
 
-:::image type="content" source="../media/19-prepare-teams-app-dependencies.png" alt-text="Screenshot of the expanded Teams Toolkit menu in Visual Studio." lightbox="../media/19-prepare-teams-app-dependencies.png":::
+![Screenshot of the expanded Teams Toolkit menu in Visual Studio.](../media/19-prepare-teams-app-dependencies.png)
 
 The Prepare Teams App Dependencies process updates the **BOT_ENDPOINT** and **BOT_DOMAIN** environment variables in .env.local file using the active Dev tunnel URL and execute the actions described in the **teamsapp.local.yml** file.
 

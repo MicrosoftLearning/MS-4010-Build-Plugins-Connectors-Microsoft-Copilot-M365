@@ -10,7 +10,7 @@ Suppose you have an external system where you store knowledge base articles. The
 
 To expose this external information inside Microsoft 365, you'll build a custom Microsoft Graph connector. Microsoft Graph connectors connect to your external system (1) to retrieve content, use the information from Microsoft Entra ID to authenticate with Microsoft 365 (2) and import the content to Microsoft 365 using the Microsoft Graph API (3).
 
-:::image type="content" source="../media/1-graph-connector-concept.png" alt-text="Diagram that shows conceptual working of a Microsoft Graph connector.":::
+![Diagram that shows conceptual working of a Microsoft Graph connector.](../media/1-graph-connector-concept.png)
 
 In this module, you learn what Microsoft Graph connectors are and why you should consider using them in your organization. You build a Microsoft Graph connector that imports local markdown files to Microsoft 365. You also learn about how to ensure that the external content you import is accessible only to individuals with appropriate assigned permissions. Finally, you optimize your Microsoft Graph connector for use with Copilot for Microsoft 365.
 

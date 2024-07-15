@@ -8,7 +8,7 @@ lab:
 
 In this exercise, you provision and configure a SharePoint Online site, which stores product information as items in a list. You update the message extension code to retrieve the list items from SharePoint Online using the Microsoft Graph SDK and return the list item data in the search results. Finally, you run and debug your message extension and test it in Microsoft Teams.
 
-:::image type="content" source="../media/4-search-results-sharepoint-online.png" alt-text="Screenshot of search results returned by a search based message extension in Microsoft Teams. The search results are returned from SharePoint Online. Each search result displays the product name, category, and product image." lightbox="../media/4-search-results-sharepoint-online.png":::
+![Screenshot of search results returned by a search based message extension in Microsoft Teams. The search results are returned from SharePoint Online. Each search result displays the product name, category, and product image.](../media/4-search-results-sharepoint-online.png)
 
 ## Task 1 - Provision and configure the Product marketing SharePoint site
 
@@ -26,7 +26,7 @@ In a web browser:
 
 An email is sent to your email address to notify you when the site provisioning is complete. This process can take a few minutes to complete.
 
-:::image type="content" source="../media/1-sharepoint-online-product-support-site.png" alt-text="Screenshot of the homepage from the Product support SharePoint Online team site. A list of recently released products is shown." lightbox="../media/1-sharepoint-online-product-support-site.png":::
+![Screenshot of the homepage from the Product support SharePoint Online team site. A list of recently released products is shown.](../media/1-sharepoint-online-product-support-site.png)
 
 To enable filtering on the Title and Retail Category columns when querying the list using Microsoft Graph API, create indexes on the list.
 

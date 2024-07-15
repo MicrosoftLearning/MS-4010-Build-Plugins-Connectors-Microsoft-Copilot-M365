@@ -64,12 +64,12 @@ First, configure one of the pages that you're importing to be accessible only to
 In the web browser:
 
 1. Navigate to the Azure portal at [https://portal.azure.com](https://portal.azure.com) and sign in with your work or school account.
-1. From the sidebar, select **Microsoft Entra ID**.
-1. From the navigation, select **Users**.
+1. From the sidebar, select **View** below **Microsoft Entra ID**.
+1. From the navigation, select **Manage** > **Users**.
 1. From the list of users, open one of the users by selecting their name.
 1. Copy the value of the **Object ID** property.
 
-   :::image type="content" source="../media/8-user.png" alt-text="Screenshot of the Azure portal with a user profile open.":::
+  ![Screenshot of the Azure portal with a user profile open.](../media/8-user.png)
 
 Use this value to define a new ACL for a specific markdown page.
 
@@ -188,15 +188,7 @@ In the code editor:
 
 Now, let's extend the code so that another page is only accessible by a select group of users.
 
-In the web browser:
-
-1. Navigate to the Azure portal at [https://portal.azure.com](https://portal.azure.com) and sign in with your work or school account.
-1. From the sidebar, select **Microsoft Entra ID**.
-1. From the navigation, select **Groups**.
-1. From the list of groups, open one of the groups by selecting their name.
-1. Copy the value of the **Object Id** property.
-
-:::image type="content" source="../media/8-group.png" alt-text="Screenshot of the Azure portal with a group page open.":::
+![Screenshot of the Azure portal with a group page open.](../media/8-group.png)
 
 Use this value to define a new ACL for a specific markdown page.
 
