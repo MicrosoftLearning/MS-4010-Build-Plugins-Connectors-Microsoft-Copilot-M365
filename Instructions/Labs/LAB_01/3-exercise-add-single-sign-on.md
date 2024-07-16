@@ -20,7 +20,7 @@ In Visual Studio:
     ```json
     "identifierUris": [
         "api://${{BOT_DOMAIN}}/botid-${{BOT_ID}}"
-    ]
+    ],
     ```
 
 1. In the file, update the **oauth2Permissions** array to create a scope to allow Teams to call web APIs as an admin or user:
@@ -86,7 +86,7 @@ In Visual Studio:
             "${{AAD_APP_ACCESS_AS_USER_PERMISSION_ID}}"
           ]
         }
-      ]
+      ],
     ```
 
 1. Save your changes
@@ -96,13 +96,13 @@ Next, update the app manifest file to define the resource that the client should
 Continuing in Visual Studio:
 
 1. In the **appPackage** folder, open the file named **manifest.json**
-1. In the file, add the following code:
+1. In the file, add the following code after the **description**:
 
     ```json
     "webApplicationInfo": {
       "id": "${{BOT_ID}}",
       "resource": "api://${{BOT_DOMAIN}}/botid-${{BOT_ID}}"
-    }
+    },
     ```
 
 1. Save your changes
@@ -500,7 +500,7 @@ With everything now in place, run the Prepare Teams App Dependencies process to 
 
 Continuing in Visual Studio:
 
-1. In **Solution Explorer**, right-click the **MsgExtProductSupport** project
+1. In **Solution Explorer**, right-click the **TeamsApp** project
 1. Expand the **Teams Toolkit** menu, select **Prepare Teams App Dependencies**
 1. In the **Microsoft 365 account** dialog, select **Continue**
 1. In the **Provision** dialog, select **Provision**
@@ -522,16 +522,11 @@ Continuing in Visual Studio:
 1. In the message compose area, select **…** to open the app flyout
 1. In the list of apps, select **Contoso products** to open the message extension
 1. In the text box, enter **Bot Builder** to start a search
-1. In the list of results, **select a result** to embed a card into the compose message box
 1. A message, **You'll need to sign in to use this app** is shown
 1. Select the **sign in link**, to open a new tab and start the authentication flow
-1. In the permissions consent page, review the permissions being requested
-1. Select *Accept*, to close the tab and return you to Microsoft Teams
-1. In the message compose area, select **…** to open the app flyout
-1. In the list of apps, select **Contoso products** to open the message extension
-1. In the text box, enter **Bot Builder** to start a search
-1. You're prompted to sign-in again. Follow the **sign in link** again to start the search.
-1. In the list of results, **select a result** to embed a card into the compose message box
+1. In the permissions consent page, review the permissions being requested.
+1. Select **Accept**, to close the tab and return you to Microsoft Teams
+1. In the list of results, **select a result** to embed a card into the compose message box and send it.
 
 Close the browser to stop the debugging session.
 

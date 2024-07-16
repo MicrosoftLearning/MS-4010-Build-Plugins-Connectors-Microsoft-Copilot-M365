@@ -20,7 +20,6 @@ Start by creating a new project.
 1. In the Configure your new project screen. Specify the following values:
     1. **Project name**: MsgExtProductSupport
     1. **Location**: Choose the default location
-    1. **Place solution and project in the same directory**: Checked
 1. Scaffold the project by selecting **Create**
 1. In the Create a new Teams application dialog, expand the **All app types** dropdown, then select **Message Extension**
 1. In the list of templates, select **Custom Search Results**
@@ -149,7 +148,7 @@ The last step is to update the Teams Toolkit project file. Replace the steps tha
 Continuing in Visual Studio:
 
 1. In the project root folder, open **teamsapp.local.yml**
-1. In the file, find the step that uses the **botAadApp/create** action (line 18) and replace it with:
+1. In the file, find the step that uses the **botAadApp/create** action (line 17-26) and replace it with:
 
     ```yml
       - uses: aadApp/create
@@ -181,7 +180,7 @@ Continuing in Visual Studio:
           bicepCliVersion: v0.9.1
     ```
 
-1. In the file, remove the step that uses the **botFramework/create** action (lines 54-63).
+1. In the file, remove the step that uses the **botFramework/create** action (lines 53-62).
 1. Save your changes.
 
 The app registration is provisioned in two steps, first the **aadApp/create** action creates a new multitenant app registration with a client secret, writing its outputs to the **.env.local** file as environment variables. Then the **aadApp/update** action uses the **entra.bot.manifest.json** file to update the app registration.
@@ -196,14 +195,14 @@ When the user interacts with your message extension, the Bot service sends reque
 
 Continuing in Visual Studio:
 
-1. On the toolbar, expand the debug profile menu by selecting the drop down next to **Microsoft Teams (browser) button** or **Start Project**.
+1. On the toolbar, make sure the **MsgExtProductSupport** is selected as the startup project and expand the debug profile menu by selecting the drop down next to **Microsoft Teams (browser) button** or **Start Project**.
 1. Expand the **Dev Tunnels (no active tunnel)** menu and select **Create a Tunnel…**
 1. In the dialog, specify the following values:
     1. **Account**: Login with your Microsoft 365 user account.
     1. **Name**: MsgExtProductSupport
     1. **Tunnel Type**: Temporary
     1. **Access**: Public
-1. Create the tunnel by selecting **OK** and in the resulting window, right-click on the tunnel and select **Make Active Tunnel** and you should see a checkmark next to the tunnel.
+1. Create the tunnel by selecting **OK**
 1. Close the prompt by selecting **OK**
 
 ## Task 4 - Update app manifest
@@ -236,7 +235,7 @@ Continuing in Visual Studio:
 Finally, update the icons, name, and description objects in the app manifest file.
 
 1. In the **appPackage** folder, open the file named **manifest.json**
-1. In the file, update the **icons**, **name**, and **description** objects with:
+1. In the file, replace the **icons**, **name**, and **description** objects with the following (lines 13-24):
 
     ```json
         "icons": {
@@ -265,12 +264,12 @@ The Prepare Teams App Dependencies process updates the **BOT_ENDPOINT** and **BO
 
 Continuing in Visual Studio:
 
-1. In Solution Explorer, right-click the **MsgExtProductSupport** project
+1. In Solution Explorer, right-click the **TeamsApp** in the Solution Explorer.
 1. Expand the **Teams Toolkit** menu, select **Prepare Teams App Dependencies**
 1. In the **Microsoft 365 account** dialog, select the account for your developer tenant, then select **Continue**
 1. In the **Provision** dialog, select the account to use for deploying resources to Azure and specify the following values:
-    1. **Subscription name**: Use the dropdown to select a subscription
-    1. **Resource group**: Select New... to open a dialog, enter **rg-msgext-product-support-local, and select **OK**
+    1. **Subscription name**: Use the dropdown to select the a subscription
+    1. **Resource group**: Expand the dropdown and select the Resource Group that has been pre-created for your user account.
     1. **Region**: Use the dropdown to select the region closest to you
 1. Provision the resources in Azure by selecting **Provision**
 1. In the Teams Toolkit warning prompt, select **Provision**
@@ -285,7 +284,8 @@ Now start the web service and test the message extension. You use Teams Toolkit 
 Continuing in Visual Studio:
 
 1. Press F5 to start a debugging session and open a new browser window that navigates the Microsoft Teams web client.
-1. When prompted, enter your Microsoft 365 account credentials
+1. Choose **Yes** when asked to trust the different SSL certificates, followed by selecting **Yes** again to any security warnings. Note, you may have to restart the debugger after accepting the certificates.
+1. When prompted, enter your Microsoft 365 account credentials.
 
   > [!IMPORTANT]
   > If a dialog box appears in Microsoft Teams with the message, “This app cannot be found”, follow the below steps to upload the app package manually:
@@ -301,7 +301,7 @@ Continue to install the app:
 
 1. In the app install dialog, select **Add**
 1. Open a new, or existing Microsoft Teams chat
-1. In the message compose area, select **…** to open the app flyout
+1. In the message compose area, start typing **/apps** to open the flyout.
 1. In the list of apps, select **Contoso products** to open the message extension
 1. In the text box, enter **Bot Builder** to start a search
 1. In the list of results, select a result to embed a card into the compose message box
