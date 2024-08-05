@@ -66,7 +66,6 @@ Open a Windows terminal to create a newe console application:
 1. Create a new folder by entering `mkdir documents\console_app` and then navigate to the new folder by entering `cd .\documents\console_app`.
 1. Create a new console application by running `dotnet new console`
 1. Add dependencies, which you need to build the connector:
-   1. Add Nuget.org as a package source, run `dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org`
    1. To add the library needed to authenticate with Microsoft 365, run `dotnet add package Azure.Identity`.
    1. To add the client library to communicate with Graph APIs, run `dotnet add package Microsoft.Graph`.
    1. To add the library needed to work with user secrets, which you'll configure in the next step, run `dotnet add package Microsoft.Extensions.Configuration.UserSecrets`.
@@ -92,7 +91,7 @@ In a terminal:
 
 Custom Graph connectors use Microsoft Graph API to manage their external connection and items. Start by creating an instance of the `GraphServiceClient` class from the **Microsoft.Graph** NuGet package you installed in the project.
 
-1. Open your project in your Visual Studio 2022.
+1. Open your project in Visual Studio 2022.
 1. In your project, add a new code file named **GraphService.cs**.
 1. In the file, start by adding references to the namespaces you'll use, by adding:
 
