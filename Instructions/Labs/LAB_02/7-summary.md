@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Summary'
-    module: 'LAB 03: Build your own message extension plugin with TypeScript (TS) for Microsoft Copilot'
+    module: 'LAB 02: Build your own message extension plugin with TypeScript (TS) for Microsoft Copilot'
 ---
 
 # Summary

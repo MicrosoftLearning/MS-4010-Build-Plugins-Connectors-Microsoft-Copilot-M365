@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Exercise 1 - Run the sample as a message extension'
-    module: 'LAB 03: Build your own message extension plugin with TypeScript (TS) for Microsoft Copilot'
+    module: 'LAB 02: Build your own message extension plugin with TypeScript (TS) for Microsoft Copilot'
 ---
 
 # Exercise 1 - Run the sample as a message extension
