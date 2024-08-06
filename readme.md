@@ -1,4 +1,4 @@
-# INF99X: Sample Course
+# MS-4010: Build plugins and connectors for Microsoft Copilot for Microsoft 365
 
 **Are you an MCT?** - Have a look at our [GitHub User Guide for MCTs](https://microsoftlearning.github.io/MCT-User-Guide/)
 
