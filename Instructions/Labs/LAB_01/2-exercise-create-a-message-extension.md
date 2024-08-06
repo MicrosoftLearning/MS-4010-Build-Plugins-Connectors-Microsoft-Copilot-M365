@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Exercise 1 - Create a message extension'
-    module: 'LAB 03: Connect Copilot for Microsoft 365 to your external data in real-time with message extension plugins built with .NET and Visual Studio'
+    module: 'LAB 01: Connect Copilot for Microsoft 365 to your external data in real-time with message extension plugins built with .NET and Visual Studio'
 ---
 
 # Exercise 1 - Create a message extension
@@ -53,7 +53,7 @@ Start by creating a new Microsoft Teams app project configured with a message ex
 
 1. Select **Visual Studio 2022** from the application selection window and then select **Always**.
 
-## Create a Dev tunnel
+## Task 2 - Create a Dev tunnel
 
 When the user interacts with your message extension, the Bot service sends requests to the web service. During development, your web service runs locally on your machine. To allow the Bot service to reach your web service, you need to expose it beyond your machine using a Dev tunnel.
 
@@ -77,7 +77,7 @@ Continuing in Visual Studio:
 
 1. Close the prompt by selecting **OK**.
 
-## Prepare resources
+## Task 3 - Prepare resources
 
 With everything now in place, using Teams Toolkit, run the **Prepare Teams App Dependencies** process to create the required resources.
 

@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Exercise 2 - Add single sign-on'
-    module: 'LAB 03: Connect Copilot for Microsoft 365 to your external data in real-time with message extension plugins built with .NET and Visual Studio'
+    module: 'LAB 01: Connect Copilot for Microsoft 365 to your external data in real-time with message extension plugins built with .NET and Visual Studio'
 ---
 
 # Exercise 2 - Add single sign-on
@@ -175,7 +175,7 @@ The **aadApp/update** action updates the app registration with the specified man
 
 ## Task 3 - Centralize connection setting name
 
-First, centralize the connection setting name in the environment file and update the app configuration to access the environment variable value at runtime.
+Next, centralize the connection setting name in the environment file and update the app configuration to access the environment variable value at runtime.
 
 Continuing in Visual Studio and in the **TeamsApp** project:
 
