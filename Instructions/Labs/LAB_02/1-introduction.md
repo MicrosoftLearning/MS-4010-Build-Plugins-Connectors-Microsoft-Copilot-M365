@@ -1,24 +1,29 @@
 ---
 lab:
     title: 'Introduction'
-    module: 'LAB 02: Integrate external content with Copilot for Microsoft 365 using Microsoft Graph connectors built with .NET'
+    module: 'LAB 03: Build your own message extension plugin with TypeScript (TS) for Microsoft Copilot'
 ---
 
 # Introduction
 
-Suppose you have an external system where you store knowledge base articles. These articles contain information about different processes in your organization. You want to be able to easily find and discover relevant information from Microsoft 365. You also want Copilot for Microsoft 365 to include information from these knowledge base articles in its responses.
+In this project, you'll learn to use Teams Message Extensions as plugins in Microsoft Copilot for Microsoft 365. The project is based on the "Northwind Inventory" sample contained in this same [GitHub repository](https://github.com/OfficeDev/Copilot-for-M365-Plugins-Samples/tree/main/samples/msgext-northwind-inventory-ts). By using the venerable [Northwind Database](https://learn.microsoft.com/dotnet/framework/data/adonet/sql/linq/downloading-sample-databases), you'll have plenty of simulated enterprise data to work with.
 
-To expose this external information inside Microsoft 365, you'll build a custom Microsoft Graph connector. Microsoft Graph connectors connect to your external system (1) to retrieve content, use the information from Microsoft Entra ID to authenticate with Microsoft 365 (2) and import the content to Microsoft 365 using the Microsoft Graph API (3).
+Northwind operates a specialty foods e-commerce business out of Spokane, Washington. In this lab, you'll be working with the Northwind Inventory application, which provides access to product inventory and financial information.
 
-![Diagram that shows conceptual working of a Microsoft Graph connector.](../media/1-graph-connector-concept.png)
+This exercise should take approximately **60** minutes to complete.
 
-In this module, you learn what Microsoft Graph connectors are and why you should consider using them in your organization. You build a Microsoft Graph connector that imports local markdown files to Microsoft 365. You also learn about how to ensure that the external content you import is accessible only to individuals with appropriate assigned permissions. Finally, you optimize your Microsoft Graph connector for use with Copilot for Microsoft 365.
+## Before you start
 
-## Prerequisites
+- [**Prepare**](./2-prepare-development-environment.md) first by setting up your development environment and getting the application running.
 
-- Basic knowledge of C#
-- Basic knowledge of authentication
-- Access to a [Microsoft 365 developer tenant](https://developer.microsoft.com/microsoft-365/dev-program?ocid=MSlearn)
-- [.NET 8.0](https://dotnet.microsoft.com/download/dotnet/8.0)
+- In [**Exercise 1**](./3-exercise-1-run-message-extension.md), you'll run the same application as a [message extension](https://learn.microsoft.com/microsoftteams/platform/messaging-extensions/what-are-messaging-extensions) in Microsoft Teams and Outlook.
 
-When you're ready to begin, [continue to the next exercise...](./2-exercise-configure-connection-schema.md)
+- In [**Exercise 2**](./4-exercise-2-run-copilot-plugin.md), you'll run the application as a plugin for Copilot for Microsoft 365. You'll experiment with various prompts and you'll observe how the plugin gets invoked using different parameters. As you chat with Copilot, you can watch the developer console to see queries it's making.
+
+- In [**Exercise 3**](./5-exercise-3-add-new-command.md), you'll learn how to add a new command to the application, so that you can expand the plugin capabilities and perform more tasks.
+
+  ![Screenshot of an adaptive card displaying a product.](../media/1-00-product-card-only.png)
+
+- Finally, [**in Exercise 4**](./6-exercise-4-explore-plugin-source-code.md) you'll go on a tour of the code to see how it works in more depth. If you don't yet have Copilot, everything else will still work as a message extension for Microsoft 365.
+
+When you're ready to begin, [continue to the next exercise...](./2-prepare-development-environment.md)
