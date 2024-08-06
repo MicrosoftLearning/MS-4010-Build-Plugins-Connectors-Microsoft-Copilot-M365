@@ -274,7 +274,7 @@ Continuing in Visual Studio and in the **ProductsPlugin** project:
     }
     ```
 
-1. Save your changes
+1. Save your changes.
 
 The Adaptive Card template uses binding expressions to display the product information. The **\$\{name\}**, **\$\{category\}**, **\$\{imageUrl\}**, **\$\{callVolume\}**, and **\$\{releaseDate\}** expressions are replaced with the corresponding values from the product data. The **formatNumber** and **formatDateTime** template functions are used to format the **callVolume** and **releaseDate** values, into a number and date respectively.
 
@@ -302,7 +302,7 @@ Next, update the **OnTeamsMessagingExtensionQueryAsync** method to create a list
 
 In the **ProductsPlugin** project:
 
-1. In the **Search** folder, open **SearchApp.cs**,
+1. In the **Search** folder, open **SearchApp.cs**.
 
 1. Update **card.json** to **Product.json**, to reflect the change in the file name. Replace the following code:
 
@@ -359,17 +359,17 @@ With everything now in place, run the **Prepare Teams App Dependencies** process
 
 Continuing in Visual Studio:
 
-1. In **Solution Explorer**, right-click the **TeamsApp** project,
+1. In **Solution Explorer**, right-click the **TeamsApp** project.
 
-1. Expand the **Teams Toolkit** menu, select **Prepare Teams App Dependencies**,
+1. Expand the **Teams Toolkit** menu, select **Prepare Teams App Dependencies**.
 
-1. In the **Microsoft 365 account** dialog, select **Continue**,
+1. In the **Microsoft 365 account** dialog, select **Continue**.
 
-1. In the **Provision** dialog, select **Provision**,
+1. In the **Provision** dialog, select **Provision**.
 
-1. In the **Teams Toolkit warning** dialog, select **Provision**,
+1. In the **Teams Toolkit warning** dialog, select **Provision**.
 
-1. In the **Teams Toolkit information** dialog, select the cross icon to close the dialog,
+1. In the **Teams Toolkit information** dialog, select the cross icon to close the dialog.
 
 ## Task 6 - Run and debug
 
