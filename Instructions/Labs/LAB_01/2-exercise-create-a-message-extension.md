@@ -16,15 +16,21 @@ Start by creating a new Microsoft Teams app project configured with a message ex
 
 1. Open a new PowerShell session as Administrator.
 
+1. Change to an appropriate working directory by running:
+
+    ```Powershell
+    cd ~\Documents
+    ```
+
 1. Start with installing the template package from NuGet by running:
 
-    ```pwsh
+    ```PowerShell
     dotnet new install M365Advocacy.Teams.Templates
     ```
 
 1. Create a new project by running:
 
-    ```pwsh
+    ```PowerShell
     dotnet new teams-msgext-search --name "ProductsPlugin" `
       --internal-name "msgext-products" `
       --display-name "Contoso products" `
@@ -45,6 +51,8 @@ Start by creating a new Microsoft Teams app project configured with a message ex
 
 1. Open the solution in Visual Studio by running `.\ProductsPlugin.sln`.
 
+1. Select **Visual Studio 2022** from the application selection window and then select **Always**.
+
 ## Create a Dev tunnel
 
 When the user interacts with your message extension, the Bot service sends requests to the web service. During development, your web service runs locally on your machine. To allow the Bot service to reach your web service, you need to expose it beyond your machine using a Dev tunnel.
@@ -53,11 +61,11 @@ When the user interacts with your message extension, the Bot service sends reque
 
 Continuing in Visual Studio:
 
-1. On the toolbar, select the drop-down next to **Start** button, expand the **Dev Tunnels (no active tunnel)** menu and select **Create a Tunnel…**
+1. On the toolbar, select the drop-down next to **Start** button, expand the **Dev Tunnels (no active tunnel)** menu and select **Create a Tunnel**.
 
 1. In the dialog, specify the following values:
 
-    1. **Account**: Select an account of your choice
+    1. **Account**: Sign in using the Microsoft 365 account provided to you.
 
     1. **Name**: msgext-products
 
@@ -65,9 +73,9 @@ Continuing in Visual Studio:
 
     1. **Access**: Public
 
-1. Create the tunnel by selecting **OK**. A prompt is shown stating that the new tunnel is now the current active tunnel
+1. Create the tunnel by selecting **OK**. A prompt is shown stating that the new tunnel is now the current active tunnel.
 
-1. Close the prompt by selecting **OK**
+1. Close the prompt by selecting **OK**.
 
 ## Prepare resources
 
@@ -81,21 +89,19 @@ Take a moment to explore the steps in the **teamsapp.local.yml** file.
 
 Continuing in Visual Studio:
 
-1. Open the **Project** menu (alternatively, you can right select the TeamsApp project in the Solution Explorer), expand the **Teams Toolkit** menu and select **Prepare Teams App Dependencies**
+1. Open the **Project** menu (alternatively, you can right select the **TeamsApp** project in the Solution Explorer), expand the **Teams Toolkit** menu and select **Prepare Teams App Dependencies**.
 
-1. In the **Microsoft 365 account** dialog, sign in to or select an existing account to access your Microsoft 365 tenant, then select **Continue**
+1. In the **Microsoft 365 account** dialog, sign in to or select an existing account to access your Microsoft 365 tenant, then select **Continue**.
 
 1. In the **Provision** dialog, sign in or select an existing account to use for deploying resources to Azure and specify the following values:
 
-      1. **Subscription name**: Use the dropdown to select a subscription
+      1. **Subscription name**: Use the dropdown to select a subscription.
 
-      1. **Resource group**: Select **New...** to open a dialog, in the text box, enter **rg-msgext-products-local**, and select **OK**
+      1. **Resource group**: Select the pre-populated resource group from the dropdown list.
 
-      1. **Region**: Use the dropdown to select the region closest to you
+1. Create the resources in Azure by selecting **Provision**.
 
-1. Create the resources in Azure by selecting **Provision**
-
-1. In the Teams Toolkit warning prompt, select **Provision**
+1. In the Teams Toolkit warning prompt, select **Provision**.
 
 1. In the Teams Toolkit information prompt, select **View provisioned resources** to open a new browser window.
 
@@ -112,55 +118,30 @@ In Visual Studio:
 
 1. Open the **Tools** menu and select **Options...**
 
-1. In the search box, enter **multi-project**
+1. In the search box, enter **multi-project**.
 
-1. Under **Environment**, select **Preview Features**
+1. Under **Environment**, select **Preview Features**.
 
 1. Check the box next to **Enable Multi-Project Launch Profiles** and select **OK** to save your changes.
 
-By default, Visual Studio will open a browser window using your main Microsoft Edge profile. If you chose to use a Microsoft 365 account during the Prepare Teams App Dependencies process that is different to the account you use in your main profile, then it is recommended that you configure Visual Studio to launch a browser window that uses  a specific Microsoft Edge profile. This ensures that the correct account and Microsoft 365 tenant is used when testing your app.
-
-To configure Visual Studio to use a specific Microsoft Edge profile:
-
-In Microsoft Edge:
-
-1. Switch to the profile you want to use, or [create a new profile](https://www.microsoft.com/edge/learning-centerhow-to-add-new-profiles).
-
-1. Navigate to **edge://version** and note the **ProfilePath** value. If the profile path is **C:\Users\user\AppData\Local\Microsoft\Edge\User Data\Profile1**, then **Profile 1** is the directory name of the profile.
-
-1. Copy the directory name of the profile, for example, **Profile 1**.
-
-In Visual Studio:
-
-1. On the toolbar, select the drop-down next to **Start** button, select **Browse with...**
-
-1. Select **Add...**
-
-1. In the **Add program dialog**, specify the following values:
-
-    1. **Program**: C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe
-
-    1. **Arguments**: --profile-directory="Profile 1", replacing **Profile 1** with the directory name of the profile you want to use
-
-    1. **Friendly name**: Microsoft Edge (Profile Name), replacing **Profile Name** with the name of the profile you want to use
-
-1. Select **OK**
-
-1. Select **Set as Default**, then select **Cancel**
-
 To start a debug session and install the app in Microsoft Teams:
 
-1. Press <kbd>F5</kbd> or select **Start** from the toolbar
+1. Press <kbd>F5</kbd> or select **Start** from the toolbar.
+
+1. Trust or approve any SSL certification warnings that pop up when launching the app for the first time.
 
 1. Wait until a browser window opens and the app install dialog appears in the Microsoft Teams web client. If prompted, enter your Microsoft 365 account credentials.
 
-1. In the app install dialog, select **Add**
+1. In the app install dialog, select **Add**.
 
 To test the message extension:
 
-1. Open a new, or existing Microsoft Teams chat.
+1. Open a new chat and begin typing **Contoso** into the **To** box, selecting **Contoso Product Support**.
 
-1. In the message compose area, select **+** to open the app picker.
+    > [!NOTE]
+    > It will not work if you chat with your own user account. It must be another user or group.
+
+1. In the message compose area, type **/apps** to open the App picker.
 
 1. In the list of apps, select **Contoso products** to open the message extension.
 

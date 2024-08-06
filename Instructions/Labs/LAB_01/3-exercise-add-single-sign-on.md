@@ -16,37 +16,58 @@ First, create a Microsoft Entra app registration for the backend API. For the pu
 
 In a browser window:
 
-1. Navigate to the [Azure portal](https://portal.azure.com)
-1. Open the portal menu and select **Microsoft Entra ID**
-1. Select **App registrations** and then select **New registration**
+1. Navigate to the [Azure portal](https://portal.azure.com).
+
+1. Open the portal menu and select **Microsoft Entra ID**.
+
+1. Select **Manage > App registrations** and then select **New registration**.
+
 1. In the Register an application form, specify the following values:
+
     1. **Name**: Products API
+
     1. **Support account types**: Accounts in any organizational directory (Any Microsoft Entra ID tenant - Multitenant)
-1. Select **Register** to create the app registration
-1. In the app registration left hand menu, select **Expose an API**
-1. Select **Add** and **Save** create a new Application ID URI
-1. In the Scopes defined by this API section, select **Add a scope**
+
+1. Select **Register** to create the app registration.
+
+1. In the app registration left hand menu, select **Manage > Expose an API**.
+
+1. Select **Add** and **Save** to create a new Application ID URI.
+
+1. In the Scopes defined by this API section, select **Add a scope**.
+
 1. In the Add a scope form, specify the following values:
+
     1. **Scope name**: Product.Read
+
     1. **Who can consent?**: Admins and users
+
     1. **Admin consent display name**: Read products
+
     1. **Admin consent description**: Allows the app to read product data
+
     1. **User consent display name**: Read products
+
     1. **User consent description**: Allows the app to read product data
+
     1. **State**: Enabled
-1. Select **Add scope** to create the scope
+
+1. Select **Add scope** to create the scope.
 
 Next, take a note of the app registration ID and the scope ID. You need these values to configure the app registration used to obtain an access token for the backend API.
 
-1. In the app registration left hand menu, select **Manifest**
-1. Copy the **appId** property value and save it for later use
-1. Copy the **api.oauth2PermissionScopes[0].id** property value and save it for later use
+1. In the app registration left hand menu, select **Manifest**.
+
+1. Copy the **appId** property value and save it for later use.
+
+1. Copy the **oauth2PermissionScopes.id** property value and save it for later use.
 
 As we need these values in the project, add them to the environment file.
 
-In Visual Studio and the TeamsApp project:
+In Visual Studio and the **TeamsApp** project:
 
-1. In the **env** folder, open **.env.local**
+1. In the **env** folder, open **.env.local**.
+
 1. In the file, create the following environment variables and set the values to the app registration ID and scope ID:
 
     ```text
@@ -54,7 +75,7 @@ In Visual Studio and the TeamsApp project:
     BACKEND_API_ENTRA_APP_SCOPE_ID=<scope-id>
     ```
 
-1. Save your changes
+1. Save your changes.
 
 ## Task 2 - Create an app registration manifest file for authentication with the backend API
 
@@ -62,9 +83,10 @@ To authenticate with the backend API, you need an app registration to obtain an 
 
 Next, create an app registration manifest file. The manifest defines the API permission scopes and redirect URI on the app registration.
 
-In Visual Studio and the TeamsApp project:
+In Visual Studio and the **TeamsApp** project:
 
-1. In the **infra\entra** folder, create a file named **entra.products.api.manifest.json**
+1. In the **infra\entra** folder, create a file named **entra.products.api.manifest.json**.
+
 1. In the file, add the following code:
 
     ```json
@@ -109,7 +131,7 @@ In Visual Studio and the TeamsApp project:
     }
     ```
 
-1. Save your changes
+1. Save your changes.
 
 The **requiredResourceAccess** property specifies the app registration ID and the scope ID of the backend API.
 
@@ -117,10 +139,12 @@ The **replyUrlsWithType** property specifies the redirect URI used by the Bot Fr
 
 Next, update the automated workflow to create and update the app registration.
 
-In the TeamsApp project:
+In the **TeamsApp** project:
 
-1. Open **teamsapp.local.yml**
-1. In the file, find the step that uses the **addApp/update** action
+1. Open **teamsapp.local.yml**.
+
+1. In the file, find the step that uses the **aadApp/update** action.
+
 1. After the action, add the **aadApp/create** and **aadApp/update** actions to create and update the app registration:
 
     ```yml
@@ -153,16 +177,18 @@ The **aadApp/update** action updates the app registration with the specified man
 
 First, centralize the connection setting name in the environment file and update the app configuration to access the environment variable value at runtime.
 
-Continuing in Visual Studio and in the TeamsApp project:
+Continuing in Visual Studio and in the **TeamsApp** project:
 
-1. In the **env** folder, open **.env.local**
+1. In the **env** folder, open **.env.local**.
+
 1. In the file, add the following code:
 
     ```text
     CONNECTION_NAME=ProductsAPI
     ```
 
-1. Open **teamsapp.local.yml**
+1. Open **teamsapp.local.yml**.
+
 1. In the file, find the step that uses the **file/createOrUpdateJsonFile** action targeting the **./appsettings.Development.json** file. Update the content array to include the **CONNECTION_NAME** environment variable and write the value to the **appsettings.Development.json** file:
 
     ```yml
@@ -175,14 +201,15 @@ Continuing in Visual Studio and in the TeamsApp project:
             CONNECTION_NAME: ${{CONNECTION_NAME}}
     ```
 
-1. Save your changes
+1. Save your changes.
 
 Next, update the app configuration to access the **CONNECTION_NAME** environment variable.
 
-In the ProductsPlugin project:
+In the **ProductsPlugin** project:
 
-1. Open **Config.cs**
-1. In the **ConfigOptions** class, add a new property named **CONNECTION_NAME**
+1. Open **Config.cs**.
+
+1. In the **ConfigOptions** class, add a new property named **CONNECTION_NAME**:
 
     ```csharp
     public class ConfigOptions
@@ -193,9 +220,11 @@ In the ProductsPlugin project:
     }
     ```
 
-1. Save your changes
-1. Open **Program.cs**
-1. In the file, update the code that reads the app configuration to include the **CONNECTION_NAME** property
+1. Save your changes.
+
+1. Open **Program.cs**.
+
+1. In the file, update the code that reads the app configuration to include the **CONNECTION_NAME** property:
 
     ```csharp
     var config = builder.Configuration.Get<ConfigOptions>();
@@ -205,12 +234,13 @@ In the ProductsPlugin project:
     builder.Configuration["ConnectionName"] = config.CONNECTION_NAME;
     ```
 
-1. Save your changes
+1. Save your changes.
 
 Next, update the bot code to use the connection setting name at run time.
 
-1. In the **Search** folder, open **SearchApp.cs**
-1. In the **SearchApp** class, create a constructor that accepts an **IConfiguration** object and assigns the value of the **CONNECTION_NAME** property to a private field named **connectionName**
+1. In the **Search** folder, open **SearchApp.cs**.
+
+1. In the **SearchApp** class, create a constructor that accepts an **IConfiguration** object and assigns the value of the **CONNECTION_NAME** property to a private field named **connectionName**:
 
     ```csharp
     public class SearchApp : TeamsActivityHandler
@@ -224,16 +254,17 @@ Next, update the bot code to use the connection setting name at run time.
     }
     ```
 
-1. Save your changes
+1. Save your changes.
 
 ## Task 4 - Configure the Products API connection setting
 
 To authenticate with the backend API, you need to configure a connection setting in the Azure Bot resource.
 
-Continuing in Visual Studio and the TeamsApp project:
+Continuing in Visual Studio and the **TeamsApp** project:
 
-1. In the **infra** folder, open **azure.parameters.local.json**
-1. In the file, add the **backendApiEntraAppClientId**, **productsApiEntraAppClientId**, **productsApiEntraAppClientSecret**, and **connectionName** parameters
+1. In the **infra** folder, open **azure.parameters.local.json**.
+
+1. In the file, add the **backendApiEntraAppClientId**, **productsApiEntraAppClientId**, **productsApiEntraAppClientSecret**, and **connectionName** parameters:
 
     ```json
     {
@@ -268,12 +299,13 @@ Continuing in Visual Studio and the TeamsApp project:
     }
     ```
 
-1. Save your changes
+1. Save your changes.
 
 Next, update the Bicep file to include the new parameters and pass them to the Azure Bot resource.
 
-1. In the **infra** folder, open the file named **azure.local.bicep**
-1. In the file, after the **botAppDomain** parameter declaration, add the **backendApiEntraAppClientId**, **productsApiEntraAppClientId**, **productsApiEntraAppClientSecret**, and **connectionName** parameter declarations
+1. In the **infra** folder, open the file named **azure.local.bicep**.
+
+1. In the file, after the **botAppDomain** parameter declaration, add the **backendApiEntraAppClientId**, **productsApiEntraAppClientId**, **productsApiEntraAppClientSecret**, and **connectionName** parameter declarations:
 
     ```bicep
     param backendApiEntraAppClientId string
@@ -283,7 +315,7 @@ Next, update the Bicep file to include the new parameters and pass them to the A
     param connectionName string
     ```
 
-1. In the **azureBotRegistration** module declaration, add the new parameters
+1. In the **azureBotRegistration** module declaration, add the new parameters:
 
     ```bicep
     module azureBotRegistration './botRegistration/azurebot.bicep' = {
@@ -305,8 +337,9 @@ Next, update the Bicep file to include the new parameters and pass them to the A
 
 Finally, update the bot registration Bicep file to include the new connection setting.
 
-1. In the **infra/botRegistration** folder, open **azurebot.bicep**
-1. In the file, after **botAppDomain** parameter declaration, add the **backendApiEntraAppClientId**, **productsApiEntraAppClientId**, **productsApiEntraAppClientSecret**, and **connectionName** parameter declarations
+1. In the **infra/botRegistration** folder, open **azurebot.bicep**.
+
+1. In the file, after **botAppDomain** parameter declaration, add the **backendApiEntraAppClientId**, **productsApiEntraAppClientId**, **productsApiEntraAppClientSecret**, and **connectionName** parameter declarations:
 
     ```bicep
     param backendApiEntraAppClientId string
@@ -316,7 +349,7 @@ Finally, update the bot registration Bicep file to include the new connection se
     param connectionName string
     ```
 
-1. In the file, create a new resource named **botServicesProductsApiConnection**
+1. In the file, create a new resource named **botServicesProductsApiConnection**:
 
     ```bicep
     resource botServicesProductsApiConnection 'Microsoft.BotService/botServices/connections@2022-09-15' = {
@@ -343,7 +376,7 @@ Finally, update the bot registration Bicep file to include the new connection se
     }
     ```
 
-1. Save your changes
+1. Save your changes.
 
 ## Task 5 - Configure authentication in the message extension
 
@@ -351,10 +384,12 @@ To authenticate user queries in the message extension, you use the Bot Framework
 
 To simplify the code, create a helper class that handles user authentication.
 
-Continuing in Visual Studio and the ProductsPlugin project:
+Continuing in Visual Studio and the **ProductsPlugin** project:
 
-1. Create a new folder named **Helpers**
+1. Create a new folder named **Helpers**.
+
 1. In the **Helpers** folder, create a new class file named **AuthHelpers.cs**
+
 1. In the file, add the following code:
 
     ```csharp
@@ -406,17 +441,20 @@ Continuing in Visual Studio and the ProductsPlugin project:
     }
     ```
 
-1. Save your changes
+1. Save your changes.
 
 The three helper methods in the **AuthHelpers** class handle user authentication in the message extension.
 
 - **CreateAuthResponse** method constructs a response that renders a sign-in link in the user interface. The sign-in link is retrieved from the token service using the **GetSignInResourceAsync** method.
+
 - **GetToken** method uses the token service client to obtain an access token for the current user. The method uses a magic code to verify the authenticity of the request.
+
 - **HasToken** method checks if the response from the token service contains an access token. If the token isn't null or empty, the method returns true.
 
 Next, update the message extension code to use the helper methods to authenticate user queries.
 
-1. In the **Search** folder, open **SearchApp.cs**
+1. In the **Search** folder, open **SearchApp.cs**.
+
 1. At the top of the file, add the following using statement:
 
     ```csharp
@@ -435,13 +473,14 @@ Next, update the message extension code to use the helper methods to authenticat
     }
     ```
 
-1. Save your changes
+1. Save your changes.
 
 Next, add the Token Service domain to the app manifest file to ensure that the client can trust the domain when initiating a single sign-on flow.
 
-In the TeamsApp project:
+In the **TeamsApp** project:
 
-1. In the **appPackage** folder, open **manifest.json**
+1. In the **appPackage** folder, open **manifest.json**.
+
 1. In the file, update the **validDomains** array, add the domain of the token service:
 
     ```json
@@ -451,7 +490,7 @@ In the TeamsApp project:
     ]
     ```
 
-1. Save your changes
+1. Save your changes.
 
 ## Task 6 - Create and update resources
 
@@ -459,35 +498,49 @@ With everything now in place, run the **Prepare Teams App Dependencies** process
 
 Continuing in Visual Studio:
 
-1. In **Solution Explorer**, right-click the **TeamsApp** project
-1. Expand the **Teams Toolkit** menu, select **Prepare Teams App Dependencies**
-1. In the **Microsoft 365 account** dialog, select **Continue**
-1. In the **Provision** dialog, select **Provision**
-1. In the **Teams Toolkit warning** dialog, select **Provision**
-1. In the **Teams Toolkit information** dialog, select the cross icon to close the dialog
+1. In **Solution Explorer**, right-click the **TeamsApp** project.
+
+1. Expand the **Teams Toolkit** menu, select **Prepare Teams App Dependencies**.
+
+1. In the **Microsoft 365 account** dialog, select **Continue**.
+
+1. In the **Provision** dialog, select **Provision**.
+
+1. In the **Teams Toolkit warning** dialog, select **Provision**.
+
+1. In the **Teams Toolkit information** dialog, select the cross icon to close the dialog.
 
 ## Task 7 - Run and debug
 
 With the resources provisioned, start a debugging session to test the message extension.
 
-1. To start a new debug session, press <kbd>F5</kbd> or select **Start** from the toolbar
+1. To start a new debug session, press <kbd>F5</kbd> or select **Start** from the toolbar.
+
 1. Wait until a browser window opens and the app install dialog appears in the Microsoft Teams web client. If prompted, enter your Microsoft 365 account credentials.
-1. In the app install dialog, select **Add**
-1. Open a new, or existing Microsoft Teams chat
-1. In the message compose area, select **+** to open the app picker
-1. In the list of apps, select **Contoso products** to open the message extension
-1. In the text box, enter **hello**
-1. A message, **You'll need to sign in to use this app** is shown
+
+1. In the app install dialog, select **Add**.
+
+1. Open a new, or existing Microsoft Teams chat.
+
+1. In the message compose area, start typing **/apps** to open the app picker.
+
+1. In the list of apps, select **Contoso products** to open the message extension.
+
+1. In the text box, enter **hello**. You may need to enter your search multiple times.
+
+1. A message, **You'll need to sign in to use this app** is shown:
 
     ![Screenshot of an authentication challenge in a search based message extension. A link to sign-in is displayed.](../media/2-sign-in.png)
 
-1. Follow the **sign in** link to start the authentication flow
-1. Consent to the permissions requested and return to Microsoft Teams
+1. Follow the **sign in** link to start the authentication flow.
+
+1. Consent to the permissions requested and return to Microsoft Teams:
 
     ![Screenshot of Microsoft Entra API permission consent dialog.](../media/18-api-permission-consent.png)
 
-1. Wait for the search to complete and the results to be displayed
-1. In the list of results, select **hello** to embed a card into the compose message box
+1. Wait for the search to complete and the results to be displayed.
+
+1. In the list of results, select **hello** to embed a card into the compose message box.
 
 Return to Visual Studio and select **Stop** from the toolbar or press <kbd>Shift</kbd> + <kbd>F5</kbd> to stop the debug session.
 

@@ -44,9 +44,9 @@ By the end of this module, you're able to create message extensions written in C
 
 At the end of this module, you should be able to:
 
-- Understand what message extensions are and how to build them
-- Create a message extension
-- Understand how to authenticate users using single sign-on and call a custom API protected with Microsoft Entra authentication
-- Understand how to extend and optimize message extensions for use with Copilot for Microsoft 365
+- Understand what message extensions are and how to build them.
+- Create a message extension.
+- Understand how to authenticate users using single sign-on and call a custom API protected with Microsoft Entra authentication.
+- Understand how to extend and optimize message extensions for use with Copilot for Microsoft 365.
 
 When you're ready to begin, [continue to the first exercise...](./2-exercise-create-a-message-extension.md)
