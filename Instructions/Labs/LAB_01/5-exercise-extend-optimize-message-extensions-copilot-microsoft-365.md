@@ -21,12 +21,10 @@ Open Visual Studio and in the **TeamsApp** project:
 1. Update the **description** object
 
     ```json
-    {
-        "description": {
-            "short": "Product look up tool.",
-            "full": "Get real-time product information and share them in a conversation. Search by product name or target audience. ${{APP_DISPLAY_NAME}} works with Microsoft 365 Chat. Find products at Contoso. Find Contoso products called mark8. Find Contoso products named mark8. Find Contoso products related to Mark8. Find Contoso products aimed at individuals. Find Contoso products aimed at businesses. Find Contoso products aimed at individuals with the name mark8. Find Contoso products aimed at businesses with the name mark8."
-        },
-    }
+    "description": {
+        "short": "Product look up tool.",
+        "full": "Get real-time product information and share them in a conversation. Search by product name or target audience. ${{APP_DISPLAY_NAME}} works with Microsoft 365 Chat. Find products at Contoso. Find Contoso products called mark8. Find Contoso products named mark8. Find Contoso products related to Mark8. Find Contoso products aimed at individuals. Find Contoso products aimed at businesses. Find Contoso products aimed at individuals with the name mark8. Find Contoso products aimed at businesses with the name mark8."
+    },
     ```
 
 ## Task 2 - Add a new parameter
@@ -35,25 +33,23 @@ Add a new parameter that Copilot can use. This new parameter helps users look up
 
 Continuing in Visual Studio and in **TeamsApp** project:
 
-1. In the **parameters** array, add the **TargetAudience** parameter after the **ProductName** parameter:
+1. Within **manifest.json**, in the **parameters** array, add the **TargetAudience** parameter after the **ProductName** parameter:
 
     ```json
-    {    
-        "parameters": [
-            {
-                "name": "ProductName",
-                "title": "Product name",
-                "description": "The name of the product as a keyword",
-                "inputType": "text"
-            },
-            {
-                "name": "TargetAudience",
-                "title": "Target audience",
-                "description": "Audience that the product is aimed at. Consumer products are sold to individuals. Enterprise products are sold to businesses",
-                "inputType": "text"
-            }
-        ]
-    }
+    "parameters": [
+        {
+            "name": "ProductName",
+            "title": "Product name",
+            "description": "The name of the product as a keyword",
+            "inputType": "text"
+        },
+        {
+            "name": "TargetAudience",
+            "title": "Target audience",
+            "description": "Audience that the product is aimed at. Consumer products are sold to individuals. Enterprise products are sold to businesses",
+            "inputType": "text"
+        }
+    ]
     ```
 
 1. Save your changes.
@@ -62,23 +58,10 @@ The description of the **TargetAudience** parameter describes what it's and expl
 
 Next, update the command description to include the new parameter.
 
-1. In the **commands** array, update the **description** of the command:
+1. In the **commands** array, update the **description** of the command on **line 36**:
 
     ```json
-    {
-        "commands": [
-            {
-                "id": "Search",
-                "type": "query",
-                "title": "Products",
-                "description": "Find products by name or by target audience",
-                "initialRun": true,
-                "fetchTask": false,
-                "context": [...],
-                "parameters": [...]
-            }
-        ]
-    }
+    "description": "Find products by name or by target audience.",
     ```
 
 ## Task 3 - Update message extension logic
@@ -153,11 +136,10 @@ Next, update the **SearchApp** class to handle the new parameter.
 
 1. In **Search** folder, open **SearchApp.cs**..
 
-1. In the **OnTeamsMessagingExtensionQueryAsync** method, replace the following code:
+1. In the **OnTeamsMessagingExtensionQueryAsync** method, replace the following code starting on **line 30**:
 
     ```csharp
     var name = MessageExtensionHelpers.GetQueryParameterValueByName(query.Parameters, "ProductName");
-    
     var productService = new ProductsService(tokenResponse.Token);
     var products = await productService.GetProductsByNameAsync(name);
     ```
@@ -200,7 +182,7 @@ With the resources provisioned, start a debugging session to test the message ex
 
 First, start **Dev Proxy** to simulate the custom API.
 
-1. Open a new Terminal as Administrator.
+1. In the **Command Prompt window** you still have open, run the following command to start Dev Proxy:
 
 1. Run the following command to start Dev Proxy:
 

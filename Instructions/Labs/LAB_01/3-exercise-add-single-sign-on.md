@@ -32,7 +32,7 @@ In a browser window:
 
 1. In the app registration left hand menu, select **Manage > Expose an API**.
 
-1. Select **Add** and **Save** to create a new Application ID URI.
+1. Next to **Application ID URI**, select **Add** and **Save** to create a new Application ID URI.
 
 1. In the Scopes defined by this API section, select **Add a scope**.
 
@@ -60,7 +60,7 @@ Next, take a note of the app registration ID and the scope ID. You need these va
 
 1. Copy the **appId** property value and save it for later use.
 
-1. Copy the **oauth2PermissionScopes.id** property value and save it for later use.
+1. Copy the **oauth2Permissions.id** property value and save it for later use.
 
 As we need these values in the project, add them to the environment file.
 
@@ -68,7 +68,7 @@ In Visual Studio and the **TeamsApp** project:
 
 1. In the **env** folder, open **.env.local**.
 
-1. In the file, create the following environment variables and set the values to the app registration ID and scope ID:
+1. In the file, add the following environment variables and set the values to the **app registration ID** and **scope ID** that you saved earlier:
 
     ```text
     BACKEND_API_ENTRA_APP_ID=<app-registration-id>
@@ -85,7 +85,7 @@ Next, create an app registration manifest file. The manifest defines the API per
 
 In Visual Studio and the **TeamsApp** project:
 
-1. In the **infra\entra** folder, create a file named **entra.products.api.manifest.json**.
+1. In the **infra\entra** folder, create a new file (<kbd>Ctrl+Shift+A</kbd>) named **entra.products.api.manifest.json**.
 
 1. In the file, add the following code:
 
@@ -240,7 +240,7 @@ Next, update the bot code to use the connection setting name at run time.
 
 1. In the **Search** folder, open **SearchApp.cs**.
 
-1. In the **SearchApp** class, create a constructor that accepts an **IConfiguration** object and assigns the value of the **CONNECTION_NAME** property to a private field named **connectionName**:
+1. At the beginning of the **SearchApp** class, create a constructor that accepts an **IConfiguration** object and assigns the value of the **CONNECTION_NAME** property to a private field named **connectionName**:
 
     ```csharp
     public class SearchApp : TeamsActivityHandler
@@ -349,7 +349,7 @@ Finally, update the bot registration Bicep file to include the new connection se
     param connectionName string
     ```
 
-1. In the file, create a new resource named **botServicesProductsApiConnection**:
+1. In the file, add a new resource named **botServicesProductsApiConnection** to the end of the file:
 
     ```bicep
     resource botServicesProductsApiConnection 'Microsoft.BotService/botServices/connections@2022-09-15' = {
@@ -495,6 +495,9 @@ In the **TeamsApp** project:
 ## Task 6 - Create and update resources
 
 With everything now in place, run the **Prepare Teams App Dependencies** process to create new resources and update existing ones.
+
+> [!NOTE]
+> If your provisioning fails to prepare the dependencies, ensure that you have the right values for **BACKEND_API_ENTRA_APP_ID** and **BACKEND_API_ENTRA_APP_SCOPE_ID** in **env.local**.
 
 Continuing in Visual Studio:
 

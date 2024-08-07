@@ -18,17 +18,19 @@ To complete this exercise, you need to install the [latest version of of Dev Pro
 
 The preset simulates a CRUD (Create, Read, Update, Delete) API with an in-memory data store, which is protected by Microsoft Entra. This means that you can test your app as if it were calling a real API that requires authentication.
 
-1. To install Dev Proxy, run the following command in your terminal window:
+1. To install Dev Proxy, open a new **Command Prompt window as Administrator**:
 
     ```bash
     winget install Microsoft.DevProxy --silent
     ```
 
-1. To download the preset, run the following command in your terminal (**Ctrl+`** in Visual Studio):
+1. To download the preset, run the following command next:
 
     ```bash
     devproxy preset get learn-copilot-me-plugin
     ```
+
+1. Keep the Command Prompt window open for later use.
 
 ## Task 2 - Get the user query value
 
@@ -38,7 +40,7 @@ In Visual Studio and the **ProductsPlugin** project:
 
 1. In the **Helpers** folder, create a new file named **MessageExtensionHelpers.cs**.
 
-1. In the file, add the following code:
+1. In the file, replace the code with the following:
 
    ```csharp
    using Microsoft.Bot.Schema.Teams;
@@ -122,7 +124,7 @@ In Visual Studio and the **ProductsPlugin** project:
 
 1. In the **Models** folder, create a new file named **Product.cs**.
 
-1. In the file, add the following code:
+1. In the file, replace the existing code with the following:
 
    ```csharp
    using System.Text.Json.Serialization;
@@ -152,7 +154,7 @@ Next, create a service class that retrieves the product data from the custom API
 
 1. In the **Services** folder, create a new file named **ProductService.cs**.
 
-1. In the file, add the following code:
+1. In the file, replace the existing code with the following:
 
     ```csharp
     using System.Net.Http.Headers;
@@ -304,7 +306,7 @@ In the **ProductsPlugin** project:
 
 1. In the **Search** folder, open **SearchApp.cs**.
 
-1. Update **card.json** to **Product.json**, to reflect the change in the file name. Replace the following code:
+1. Update **card.json** to **Product.json**, to reflect the change in the file name. Replace the following code on line 34:
 
    ```csharp
    var card = await File.ReadAllTextAsync(Path.Combine(".", "Resources", "card.json"), cancellationToken);
@@ -377,15 +379,13 @@ With the resources provisioned, start a debugging session to test the message ex
 
 First, start Dev Proxy to simulate the custom API.
 
-1. Open a new PowerShell or Terminal window as Administrator.
-
-1. Run the following command to start Dev Proxy:
+1. In the **Command Prompt window** you still have open, run the following command to start Dev Proxy:
 
    ```bash
    devproxy --config-file "~appFolder/presets/learn-copilot-me-plugin/products-api-config.json"
    ```
 
-1. If prompted, accept the certificate warning
+1. If prompted, accept any certificate warnings.
 
 > [!NOTE]
 > When Dev Proxy is running, it acts as a system-wide proxy.
@@ -404,7 +404,7 @@ Next, start a debug session in Visual Studio:
 
 1. In the list of apps, select **Contoso products** to open the message extension.
 
-1. In the text box, enter **mark8**.
+1. In the text box, enter **mark8**. You may need to enter your search query multiple times.
 
 1. Wait for the search to complete and the results to be displayed.
 

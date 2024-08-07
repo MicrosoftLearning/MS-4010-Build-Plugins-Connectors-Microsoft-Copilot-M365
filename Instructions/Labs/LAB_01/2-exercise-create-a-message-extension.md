@@ -136,7 +136,7 @@ To start a debug session and install the app in Microsoft Teams:
 
 To test the message extension:
 
-1. Open a new chat and begin typing **Contoso** into the **To** box, selecting **Contoso Product Support**.
+1. Open a new chat (<kbd>Alt+N</kbd>) and begin typing **Contoso** into the **To** box, selecting **Contoso Product Support**.
 
     > [!NOTE]
     > It will not work if you chat with your own user account. It must be another user or group.
@@ -145,7 +145,7 @@ To test the message extension:
 
 1. In the list of apps, select **Contoso products** to open the message extension.
 
-1. In the text box, enter **hello**.
+1. In the text box, enter **hello**. You may need to enter your search multiple times.
 
 1. Wait for the search results to appear.
 
