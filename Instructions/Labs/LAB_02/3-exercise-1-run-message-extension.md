@@ -67,7 +67,7 @@ You should be directed to a chat within the application, however you could use t
 
     ![Screenshot of selecting the "+" to open the message extension panel.](../media/2-03-test-message-extension-teams-take-2-01.png)
 
-  You'll see a search dialog with 3 tabs 1️⃣. The **Product Inventory** tab allows searching for products by name.
+  You'll see a search dialog with 2 tabs 1️⃣. The **Product Inventory** tab allows searching for products by name.
 
 1. Type a product name, or the beginning of a product name such as **chai** into the search box 2️⃣. If you pause as you type the first letters, you'll be given more choices of products that begin with the same characters.
 

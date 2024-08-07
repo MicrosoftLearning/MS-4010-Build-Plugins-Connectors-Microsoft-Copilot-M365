@@ -22,7 +22,7 @@ We'll go through the following tasks to accomplish this:
 
 ## Task 1 - Extend the Message Extension / plugin User Interface 
 
-1. In Visual Studio Code from the **working folder**, open **manifest.json** and add the following json immediately after the `discountSearch` command. With this additional information, you're adding to the `commands` array that defines the list of commands supported by the plugin.
+1. In Visual Studio Code from the **working folder**, open **manifest.json** and add the following json immediately after the `discountSearch` command (**line 98**). With this additional information, you're adding to the `commands` array that defines the list of commands supported by the plugin.
 
    ```json
    {
@@ -112,13 +112,13 @@ In this exercise, we'll copy some of the existing code to create new handlers fo
 
 In this task, you'll route the `companySearch` command to the handler you implemented in the previous task.
 
-1. Open **searchApp.ts** and add the following. Underneath this line:
+1. Open **searchApp.ts** and look for this on **line 10**:
 
    ```javascript
    import discountedSearchCommand from "./messageExtensions/discountSearchCommand";
    ```
 
-1. Add this line:
+1. Add this as **line 11**:
 
    ```javascript
    import customerSearchCommand from "./messageExtensions/customerSearchCommand";
@@ -176,15 +176,13 @@ Now, lets modify the **products.ts** file to add the new search query.
    } from './model';
    ```
 
-1. Add the new function `searchProductsByCustomer()`
-
-   Underneath this line:
+1. Underneath this on **line 8**:
 
    ```javascript
    import { getInventoryStatus } from '../adaptiveCards/utils';
    ```
 
-   Add the function:
+       Add the new function `searchProductsByCustomer()`:
 
    ```javascript
    export async function searchProductsByCustomer(companyName: string): Promise<ProductEx[]> {
@@ -262,7 +260,7 @@ Now you're ready to test the sample as a plugin for Copilot for Microsoft 365.
 
    Here's the output in Copilot:
 
-    ![Screenshot of Copilot producing the results from the command.](../media/3-07-response-customer-search.png)
+   ![Screenshot of Copilot producing the results from the command.](../media/3-07-response-customer-search.png)
 
 Here are other prompts to try:
 

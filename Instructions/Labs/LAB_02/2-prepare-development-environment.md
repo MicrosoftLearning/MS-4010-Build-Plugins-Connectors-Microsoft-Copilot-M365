@@ -21,7 +21,7 @@ The following tools have already been installed in the lab on **MS-4010-DEVBOX**
 
 1. [Azure Storage Explorer](https://azure.microsoft.com/products/storage/storage-explorer/) - Download this if you want to view and edit the Northwind database used in this sample.
 
-## Task 2 - Install nvm-windows
+<!--## Task 2 - Install nvm-windows
 
 You'll use this tool to install Node.js and optionally switch Node versions as needed for your projects.
 
@@ -42,13 +42,13 @@ Install Node.js version 18.18.2, which is compatible with all of the solutions i
 4. Run the command `nvm use 18.18` to use this version of Node.js.
 5. Run the command `node -v` to confirm that you have version 18.18.2 installed.
 
-You have now installed and configured Node.js version 18.18.2
+You have now installed and configured Node.js version 18.18.2-->
 
-## Task 4 - Download the sample code
+## Task 2 - Download the sample code
 
-Please [clone](https://github.com/OfficeDev/Copilot-for-M365-Plugins-Samples.git) or [download](https://github.com/OfficeDev/Copilot-for-M365-Plugins-Samples.git) the sample repository: [https://github.com/OfficeDev/Copilot-for-M365-Plugins-Samples/](https://github.com/OfficeDev/Copilot-for-M365-Plugins-Samples/).
+[Download](https://github.com/OfficeDev/Copilot-for-M365-Plugins-Samples/) the sample repository as a ZIP file and extract it to your **Documents folder**: [https://github.com/OfficeDev/Copilot-for-M365-Plugins-Samples/](https://github.com/OfficeDev/Copilot-for-M365-Plugins-Samples/).
 
-Within the cloned or downloaded repository, navigate to the **samples/msgext-northwind-inventory-ts** folder. These labs will refer to this as your "**working folder**" since this is where you'll be working.
+Within the directory, navigate to the **samples/msgext-northwind-inventory-ts** folder. These labs will refer to this as your "**working folder**" since this is where you'll be working.
 
 ## Task 3 - Copy sample documents to OneDrive
 
@@ -86,9 +86,9 @@ By doing this task early, there's a good chance that the Microsoft 365 search en
 
 In this task, you'll install the current version of [Teams Toolkit for Visual Studio Code](https://learn.microsoft.com/microsoftteams/platform/toolkit/teams-toolkit-fundamentals?pivots=visual-studio-code-v5). The easiest way to do this is from right within Visual Studio Code.
 
-1. Open your **working folder** in Visual Studio Code. You may be asked to trust the authors of this folder; if so, please do.
+1. Open your **working folder** in Visual Studio Code. You may be asked to trust the authors of this folder; if so, please do. In the **Visual Studio Code file menu** select **Open Folder** and directly open the **msgext-northwind-inventory-ts** folder.
 
-1. Now select the **Teams Toolkit** icon in the left 1️⃣. If it offers options to create a new project, you're probably in the wrong folder. In the **Visual Studio Code file menu** select **Open Folder** and directly open the **msgext-northwind-inventory-ts** folder. You should see sections for Accounts, Environment, etc. as shown below.
+1. Now select the **Teams Toolkit** icon in the left 1️⃣. If it offers options to create a new project, you're probably in the wrong folder.  You should see sections for Accounts, Environment, etc. as shown below.
 
 1. Under **Accounts** select **Sign in to Microsoft 365** 2️⃣ and sign in with your Microsoft 365 account.
 
@@ -99,9 +99,6 @@ In this task, you'll install the current version of [Teams Toolkit for Visual St
 1. Lastly, verify that a green checkmark appears next to **Custom app Upload enabled**. If it doesn't, that means that your user account doesn't have permission to upload Teams applications. This permission is "off" by default; here are [instructions for enabling users to upload custom apps](https://learn.microsoft.com/microsoftteams/teams-custom-app-policies-and-settings#allow-users-to-upload-custom-apps)
 
     ![Screenshot of checking that sideloading is enabled.](../media/1-04-setup-teams-toolkit-03.png)
-
-> [!NOTE]
-> The Microsoft 365 Developer Program doesn't include Copilot for Microsoft 365 licenses. As such, if you decide to use a developer tenant, you will be able to test the sample only as a Message Extension.
 
 ## Check your work
 
