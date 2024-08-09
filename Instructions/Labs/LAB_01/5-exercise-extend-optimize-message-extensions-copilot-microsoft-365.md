@@ -10,6 +10,10 @@ In this exercise, you extend and optimize your message extension for use with Co
 
 ![Screenshot of an answer in Copilot for Microsoft 365 that contains information returned by the message extension plugin. An adaptive card is displayed showing product information.](../media/5-copilot-answer.png)
 
+### Exercise Duration
+
+  - **Estimated Time to complete**: 40 minutes
+
 ## Task 1 - Update app description
 
 Specifying concise and accurate descriptions in your app manifest is critical to ensuring Copilot knows when and how to invoke your plugin. Update the app, command, and parameter descriptions in the app manifest.

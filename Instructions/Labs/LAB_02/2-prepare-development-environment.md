@@ -46,7 +46,11 @@ You have now installed and configured Node.js version 18.18.2-->
 
 ## Task 2 - Download the sample code
 
-[Download](https://github.com/OfficeDev/Copilot-for-M365-Plugins-Samples/) the sample repository as a ZIP file and extract it to your **Documents folder**: [https://github.com/OfficeDev/Copilot-for-M365-Plugins-Samples/](https://github.com/OfficeDev/Copilot-for-M365-Plugins-Samples/).
+[Download](https://github.com/OfficeDev/Copilot-for-M365-Plugins-Samples/) the sample repository as a ZIP file and extract it to your **Documents folder**:
+
+```text
+https://github.com/OfficeDev/Copilot-for-M365-Plugins-Samples/
+```
 
 Within the directory, navigate to the **samples/msgext-northwind-inventory-ts** folder. These labs will refer to this as your "**working folder**" since this is where you'll be working.
 

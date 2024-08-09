@@ -10,6 +10,10 @@ In this exercise, you update the message extension to retrieve data from a custo
 
 ![Screenshot of search results returned by a search based message extension in Microsoft Teams.](../media/3-search-results-api.png)
 
+### Exercise Duration
+
+  - **Estimated Time to complete**: 50 minutes
+
 ## Task 1 - Install and configure Dev Proxy
 
 In this exercise, you use Dev Proxy, a command-line tool that can simulate APIs. It's useful when you want to test your app without having to create a real API.
@@ -149,6 +153,8 @@ In Visual Studio and the **ProductsPlugin** project:
 1. Save your changes.
 
 Next, create a service class that retrieves the product data from the custom API.
+
+In Visual Studio and the **ProductsPlugin** project:
 
 1. Create a folder named **Services**.
 

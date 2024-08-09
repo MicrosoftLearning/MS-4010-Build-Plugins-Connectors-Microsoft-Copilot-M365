@@ -29,6 +29,7 @@ If you're not sure how to do this in Visual Studio Code:
 The resulting **.env.local.user** file should contain this line:
 
 ```console
+SECRET_BOT_PASSWORD=
 SECRET_STORAGE_ACCOUNT_CONNECTION_STRING=UseDevelopmentStorage=true
 ```
 

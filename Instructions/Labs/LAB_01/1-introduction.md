@@ -40,6 +40,10 @@ By the end of this module, you're able to create message extensions written in C
 - [.NET 8.0](https://dotnet.microsoft.com/download/dotnet/8.0)
 - [Dev Proxy 0.19.1+](https://aka.ms/devproxy)
 
+## Lab Duration
+
+  - **Estimated Time to complete**: 150 minutes
+
 ## Learning objectives
 
 At the end of this module, you should be able to:

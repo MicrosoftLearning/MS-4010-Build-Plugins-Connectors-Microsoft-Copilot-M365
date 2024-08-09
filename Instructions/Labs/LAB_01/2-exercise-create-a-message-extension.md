@@ -10,6 +10,10 @@ In this exercise, you create a message extension solution. You use Teams Toolkit
 
 ![Screenshot of search results returned by a search based message extension in Microsoft Teams.](../media/1-search-results.png)
 
+### Exercise Duration
+
+  - **Estimated Time to complete**: 25 minutes
+
 ## Task 1 - Create a new project with Teams Toolkit for Visual Studio
 
 Start by creating a new Microsoft Teams app project configured with a message extension that contains a search command. While you could create a project using a Teams Toolkit for Visual Studio project template, there are changes required to be made to the scaffolded project to be able to complete this module. Instead, you use a custom project template that is available as a NuGet package. The benefit of using a custom template is that it creates a solution with the necessary files and dependencies, saving you time.
@@ -65,7 +69,7 @@ Continuing in Visual Studio:
 
 1. In the dialog, specify the following values:
 
-    1. **Account**: Sign in using the Microsoft 365 account provided to you.
+    1. **Account**: Sign in using the Microsoft 365 account provided to you. Select **Work or school** account.
 
     1. **Name**: msgext-products
 

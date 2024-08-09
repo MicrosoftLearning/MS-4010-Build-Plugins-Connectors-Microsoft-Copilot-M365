@@ -10,6 +10,10 @@ In this exercise, you add single sign-on to the message extension to authenticat
 
 ![Screenshot of an authentication challenge in a search based message extension. A link to sign-in is displayed.](../media/2-sign-in.png)
 
+### Exercise Duration
+
+  - **Estimated Time to complete**: 40 minutes
+
 ## Task 1 - Configure backend API app registration
 
 First, create a Microsoft Entra app registration for the backend API. For the purposes of this exercise, you create a new one, however, in a production environment, you would use an existing app registration.
@@ -145,7 +149,7 @@ In the **TeamsApp** project:
 
 1. In the file, find the step that uses the **aadApp/update** action.
 
-1. After the action, add the **aadApp/create** and **aadApp/update** actions to create and update the app registration:
+1. After the action, add the **aadApp/create** and **aadApp/update** actions to create and update the app registration (starting on **line 31**):
 
     ```yml
       - uses: aadApp/create
@@ -243,15 +247,12 @@ Next, update the bot code to use the connection setting name at run time.
 1. At the beginning of the **SearchApp** class, create a constructor that accepts an **IConfiguration** object and assigns the value of the **CONNECTION_NAME** property to a private field named **connectionName**:
 
     ```csharp
-    public class SearchApp : TeamsActivityHandler
+    private readonly string connectionName;
+  
+    public SearchApp(IConfiguration configuration)
     {
-      private readonly string connectionName;
-    
-      public SearchApp(IConfiguration configuration)
-      {
-        connectionName = configuration["CONNECTION_NAME"];
-      }  
-    }
+      connectionName = configuration["CONNECTION_NAME"];
+    }  
     ```
 
 1. Save your changes.
