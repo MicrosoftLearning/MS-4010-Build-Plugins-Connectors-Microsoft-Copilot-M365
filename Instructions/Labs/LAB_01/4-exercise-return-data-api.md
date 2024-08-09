@@ -48,7 +48,6 @@ In Visual Studio and the **ProductsPlugin** project:
 
    ```csharp
    using Microsoft.Bot.Schema.Teams;
-
    internal class MessageExtensionHelpers
    {
        internal static string GetQueryParameterValueByName(IList<MessagingExtensionParameter> parameters, string name) => parameters.FirstOrDefault(p => p.Name == name)?.Value as string ?? string.Empty;
@@ -86,17 +85,13 @@ protected override async Task<MessagingExtensionResponse> OnTeamsMessagingExtens
 {
     var userTokenClient = turnContext.TurnState.Get<UserTokenClient>();
     var tokenResponse = await AuthHelpers.GetToken(userTokenClient, query.State, turnContext.Activity.From.Id, turnContext.Activity.ChannelId, connectionName, cancellationToken);
-
     if (!AuthHelpers.HasToken(tokenResponse))
     {
         return await AuthHelpers.CreateAuthResponse(userTokenClient, connectionName, (Activity)turnContext.Activity, cancellationToken);
     }
-
     var name = MessageExtensionHelpers.GetQueryParameterValueByName(query.Parameters, "ProductName");
-
     var card = await File.ReadAllTextAsync(Path.Combine(".", "Resources", "card.json"), cancellationToken);
     var template = new AdaptiveCardTemplate(card);
-
     return new MessagingExtensionResponse
     {
         ComposeExtension = new MessagingExtensionResult
@@ -132,7 +127,6 @@ In Visual Studio and the **ProductsPlugin** project:
 
    ```csharp
    using System.Text.Json.Serialization;
-
    internal class Product
    {
        [JsonPropertyName("productId")]
@@ -164,19 +158,16 @@ In Visual Studio and the **ProductsPlugin** project:
 
     ```csharp
     using System.Net.Http.Headers;
-    
     internal class ProductsService
     {
         private readonly HttpClient _httpClient;
         private readonly string _baseUri = "https://api.contoso.com/v1/";
-    
         internal ProductsService(string token)
         {
             _httpClient = new HttpClient();
             _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
         }
-    
         internal async Task<Product[]> GetProductsByNameAsync(string name)
         {
             var response = await _httpClient.GetAsync($"{_baseUri}products?name={name}");
@@ -330,7 +321,6 @@ In the **ProductsPlugin** project:
     var attachments = products.Select(product =>
     {
         var content = template.Expand(product);
-    
         return new MessagingExtensionAttachment
         {
             ContentType = AdaptiveCard.ContentType,

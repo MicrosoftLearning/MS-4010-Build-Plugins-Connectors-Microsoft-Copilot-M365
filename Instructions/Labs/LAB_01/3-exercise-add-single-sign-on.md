@@ -248,7 +248,6 @@ Next, update the bot code to use the connection setting name at run time.
 
     ```csharp
     private readonly string connectionName;
-  
     public SearchApp(IConfiguration configuration)
     {
       connectionName = configuration["CONNECTION_NAME"];
@@ -397,13 +396,11 @@ Continuing in Visual Studio and the **ProductsPlugin** project:
     using Microsoft.Bot.Connector.Authentication;
     using Microsoft.Bot.Schema;
     using Microsoft.Bot.Schema.Teams;
-    
     internal static class AuthHelpers
     {
         internal static async Task<MessagingExtensionResponse> CreateAuthResponse(UserTokenClient userTokenClient, string connectionName, Activity activity, CancellationToken cancellationToken)
         {
             var resource = await userTokenClient.GetSignInResourceAsync(connectionName, activity, null, cancellationToken);
-    
             return new MessagingExtensionResponse
             {
                 ComposeExtension = new MessagingExtensionResult
@@ -422,11 +419,9 @@ Continuing in Visual Studio and the **ProductsPlugin** project:
                 },
             };
         }
-    
         internal static async Task<TokenResponse> GetToken(UserTokenClient userTokenClient, string state, string userId, string channelId, string connectionName, CancellationToken cancellationToken)
         {
             var magicCode = string.Empty;
-    
             if (!string.IsNullOrEmpty(state))
             {
                 if (int.TryParse(state, out var parsed))
@@ -434,10 +429,8 @@ Continuing in Visual Studio and the **ProductsPlugin** project:
                     magicCode = parsed.ToString();
                 }
             }
-    
             return await userTokenClient.GetUserTokenAsync(userId, connectionName, channelId, magicCode, cancellationToken);
         }
-    
         internal static bool HasToken(TokenResponse tokenResponse) => tokenResponse != null && !string.IsNullOrEmpty(tokenResponse.Token);
     }
     ```
@@ -467,7 +460,6 @@ Next, update the message extension code to use the helper methods to authenticat
     ```csharp
     var userTokenClient = turnContext.TurnState.Get<UserTokenClient>();
     var tokenResponse = await AuthHelpers.GetToken(userTokenClient, query.State, turnContext.Activity.From.Id, turnContext.Activity.ChannelId, connectionName, cancellationToken);
-
     if (!AuthHelpers.HasToken(tokenResponse))
     {
         return await AuthHelpers.CreateAuthResponse(userTokenClient, connectionName, (Activity)turnContext.Activity, cancellationToken);

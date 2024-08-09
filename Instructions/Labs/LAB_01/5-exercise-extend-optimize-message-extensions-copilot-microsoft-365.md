@@ -88,7 +88,6 @@ Continuing in Visual Studio in the **ProductPlugin** project:
         var jsonString = await response.Content.ReadAsStringAsync();
         return System.Text.Json.JsonSerializer.Deserialize<Product[]>(jsonString);
     }
-
     internal async Task<Product[]> GetProductsByNameAndCategoryAsync(string name, string category)
     {
         var response = await _httpClient.GetAsync($"{_baseUri}?name={name}&category={category}");
@@ -110,7 +109,6 @@ Next, add a new method to the **MessageExtensionHelper** class to retrieve produ
     internal static async Task<IList<Product>> RetrieveProducts(string name, string audience, ProductsService productsService)
     {
         IList<Product> products;
-    
         if (string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(audience))
         {
             products = await productsService.GetProductsByCategoryAsync(audience);
@@ -127,7 +125,6 @@ Next, add a new method to the **MessageExtensionHelper** class to retrieve produ
         {
             products = [];
         }
-    
         return products;
     }
     ```
@@ -153,7 +150,6 @@ Next, update the **SearchApp** class to handle the new parameter.
     ```csharp
     var name = MessageExtensionHelpers.GetQueryParameterValueByName(query.Parameters, "ProductName");
     var audience = MessageExtensionHelpers.GetQueryParameterValueByName(query.Parameters, "TargetAudience");
-
     var productService = new ProductsService(tokenResponse.Token);
     var products = await MessageExtensionHelpers.RetrieveProducts(name, audience, productService);
     ```
