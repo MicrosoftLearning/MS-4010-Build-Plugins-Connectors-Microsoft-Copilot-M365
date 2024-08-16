@@ -35,10 +35,13 @@ By the end of this module, you're able to create message extensions written in C
 - Basic knowledge of authentication
 - Administrator access to a Microsoft 365 tenant
 - Access to an Azure subscription
-- Access to Copilot for Microsoft 365 is optional and required only to complete one exercise
+- Access to Copilot for Microsoft 365 is optional and required only to complete **Exercise 4: Task 5**.
 - Visual Studio 2022 17.10+ with [Teams Toolkit](/microsoftteams/platform/toolkit/toolkit-v4/teams-toolkit-fundamentals-vs) (Microsoft Teams development tools component) installed
 - [.NET 8.0](https://dotnet.microsoft.com/download/dotnet/8.0)
 - [Dev Proxy 0.19.1+](https://aka.ms/devproxy)
+
+> [!NOTE]
+> The only exercise in this lab that requires a Microsoft 365 Copilot license is **Exercise 4: Task 5**. Everything up to that point should be done whether your tenant has Copilot or not.
 
 ## Lab Duration
 

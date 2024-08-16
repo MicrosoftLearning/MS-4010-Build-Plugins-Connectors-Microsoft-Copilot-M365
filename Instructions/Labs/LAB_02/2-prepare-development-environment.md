@@ -15,7 +15,7 @@ First off, let's prepare your development environment, accounts, and software. B
 
 If you are using a new tenant, it's a good idea to log into the [Microsoft 365 page](https://office.com) at [https://office.com](https://office.com) before beginning. Depending on how the tenant is configured, you may be asked to set up multifactor authentication. Ensure you can access Microsoft Teams and Microsoft Outlook before proceeding.
 
-The following tools have already been installed in the lab on **MS-4010-DEVBOX**. Please make sure they are installed and operable:
+The following tools have already been installed in the lab on **MS-4010-CLIENT01**. Please make sure they are installed and operable:
 
 1. [Visual Studio Code](https://code.visualstudio.com/) (latest version)
 
