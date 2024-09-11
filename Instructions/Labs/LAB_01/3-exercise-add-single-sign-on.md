@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Exercise 2 - Add single sign-on'
-    module: 'LAB 01: Connect Copilot for Microsoft 365 to your external data in real-time with message extension plugins built with .NET and Visual Studio'
+    module: 'LAB 01: Connect Microsoft 365 Copilot to your external data in real-time with message extension plugins built with .NET and Visual Studio'
 ---
 
 # Exercise 2 - Add single sign-on
@@ -244,7 +244,7 @@ Next, update the bot code to use the connection setting name at run time.
 
 1. In the **Search** folder, open **SearchApp.cs**.
 
-1. At the beginning of the **SearchApp** class, create a constructor that accepts an **IConfiguration** object and assigns the value of the **CONNECTION_NAME** property to a private field named **connectionName**:
+1. At the beginning of the **SearchApp** class (approximately line 14), create a constructor that accepts an **IConfiguration** object and assigns the value of the **CONNECTION_NAME** property to a private field named **connectionName**:
 
     ```csharp
     private readonly string connectionName;

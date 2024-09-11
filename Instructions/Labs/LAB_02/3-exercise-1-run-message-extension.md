@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Exercise 1 - Run the sample as a message extension'
-    module: 'LAB 02: Build your own message extension plugin with TypeScript (TS) for Microsoft Copilot'
+    module: 'LAB 02: Build your own message extension plugin with TypeScript (TS) for Microsoft 365 Copilot'
 ---
 
 # Exercise 1 - Run the sample as a message extension
@@ -234,6 +234,6 @@ The code reads the **Products** table on each query, but the other tables are on
 
 After following all the tasks in this exercise, you should have a working message extension application that can be used as a Microsoft 365 plugin for Teams or Outlook.
 
-When everything is working, you're ready to run the sample application in **Microsoft Copilot for Microsoft 365**! 
+When everything is working, you're ready to run the sample application in **Microsoft 365 Copilot**! 
 
 [Continue on to the next exercise...](./4-exercise-2-run-copilot-plugin.md)

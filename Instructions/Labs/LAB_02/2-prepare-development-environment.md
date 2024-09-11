@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Prepare your development environment'
-    module: 'LAB 02: Build your own message extension plugin with TypeScript (TS) for Microsoft Copilot'
+    module: 'LAB 02: Build your own message extension plugin with TypeScript (TS) for Microsoft 365 Copilot'
 ---
 
 # Prepare your development environment
@@ -11,7 +11,7 @@ First off, let's prepare your development environment, accounts, and software. B
 ## Task 1 - Install prerequisites
 
 > [!IMPORTANT]
-> To complete this project successfully, you will need a Microsoft 365 account with permission to upload applications. To complete **Exercise 2**, the account must also be licensed for Microsoft Copilot for Microsoft 365.
+> To complete this project successfully, you will need a Microsoft 365 account with permission to upload applications. To complete **Exercise 2**, the account must also be licensed for Microsoft 365 Copilot.
 
 If you are using a new tenant, it's a good idea to log into the [Microsoft 365 page](https://office.com) at [https://office.com](https://office.com) before beginning. Depending on how the tenant is configured, you may be asked to set up multifactor authentication. Ensure you can access Microsoft Teams and Microsoft Outlook before proceeding.
 

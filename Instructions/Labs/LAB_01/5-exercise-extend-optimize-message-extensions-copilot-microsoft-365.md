@@ -1,14 +1,14 @@
 ---
 lab:
-    title: 'Exercise 4 - Extend and optimize message extensions for use with Copilot for Microsoft 365'
-    module: 'LAB 01: Connect Copilot for Microsoft 365 to your external data in real-time with message extension plugins built with .NET and Visual Studio'
+    title: 'Exercise 4 - Extend and optimize message extensions for use with Microsoft 365 Copilot'
+    module: 'LAB 01: Connect Microsoft 365 Copilot to your external data in real-time with message extension plugins built with .NET and Visual Studio'
 ---
 
-# Exercise 4 - Extend and optimize message extensions for use with Copilot for Microsoft 365
+# Exercise 4 - Extend and optimize message extensions for use with Microsoft 365 Copilot
 
-In this exercise, you extend and optimize your message extension for use with Copilot for Microsoft 365. You add a new parameter called Target Audience and update the message extension logic to handle multiple parameters. Finally, you run and debug your message extension and test it in Copilot in Microsoft Teams.
+In this exercise, you extend and optimize your message extension for use with Microsoft 365 Copilot. You add a new parameter called Target Audience and update the message extension logic to handle multiple parameters. Finally, you run and debug your message extension and test it in Copilot in Microsoft Teams.
 
-![Screenshot of an answer in Copilot for Microsoft 365 that contains information returned by the message extension plugin. An adaptive card is displayed showing product information.](../media/5-copilot-answer.png)
+![Screenshot of an answer in Microsoft 365 Copilot that contains information returned by the message extension plugin. An adaptive card is displayed showing product information.](../media/5-copilot-answer.png)
 
 > [!NOTE]
 > The only task in this exercise that requires a Microsoft 365 Copilot license is Task 5. The previous tasks should be done whether your tenant has Copilot or not.
@@ -212,21 +212,21 @@ Next, start a debug session in Visual Studio:
 
 1. In the list of plugins, toggle the **Contoso products** plugin to enable it.
 
-    ![Screenshot of Copilot for Microsoft 365 in Microsoft Teams with the Contoso products plugin enabled.](../media/20-copilot-plugin-enabled.png)
+    ![Screenshot of Microsoft 365 Copilot in Microsoft Teams with the Contoso products plugin enabled.](../media/20-copilot-plugin-enabled.png)
 
 1. Enter **Find Contoso products aimed at individuals** as your message and send it.
 
 1. Wait for Copilot to respond:
 
-    ![Screenshot of Copilot for Microsoft 365 in Microsoft Teams showing the copilot message shown while processing the user's request.](../media/21-copilot-thinking.png)
+    ![Screenshot of Microsoft 365 Copilot in Microsoft Teams showing the copilot message shown while processing the user's request.](../media/21-copilot-thinking.png)
 
 1. In the Copilot response, data returned in the plugin response is displayed and the plugin is referenced in the response:
 
-    ![Screenshot of an answer in Copilot for Microsoft 365 that contains information returned by the message extension plugin. An adaptive card is displayed showing product information.](../media/5-copilot-answer.png)
+    ![Screenshot of an answer in Microsoft 365 Copilot that contains information returned by the message extension plugin. An adaptive card is displayed showing product information.](../media/5-copilot-answer.png)
 
 1. To view the Adaptive Card relevant to the result, hover over the references in the Copilot response:
 
-    ![Screenshot of Copilot for Microsoft 365 in Microsoft Teams showing an Adaptive Card with product information displayed. The card is displayed when the user hovers over a reference in the Copilot response.](../media/22-copilot-reference.png)
+    ![Screenshot of Microsoft 365 Copilot in Microsoft Teams showing an Adaptive Card with product information displayed. The card is displayed when the user hovers over a reference in the Copilot response.](../media/22-copilot-reference.png)
 
 Return to Visual Studio and select **Stop** from the toolbar, or press <kbd>Shift</kbd> + <kbd>F5</kbd> to stop the debug session. Also, shut down Dev Proxy using <kbd>Ctrl</kbd> + <kbd>C</kbd>.
 

@@ -1,12 +1,12 @@
 ---
 lab:
     title: 'Exercise 3 - Add a new command'
-    module: 'LAB 02: Build your own message extension plugin with TypeScript (TS) for Microsoft Copilot'
+    module: 'LAB 02: Build your own message extension plugin with TypeScript (TS) for Microsoft 365 Copilot'
 ---
 
 # Exercise 3 - Add a new command
 
-In this exercise, you'll enhance the Teams Message Extension and Copilot plugin by adding a new command. While the current message extension effectively provides information about products within the Northwind inventory database, it doesn't provide information related to Northwind’s customers. You'll introduce a new command associated with an API call that retrieves products ordered by a customer name specified by the user. This exercise assumes you have completed at least exercises 1, 2, and 3. It's fine to skip Exercise 4 in case you don't have a Copilot for Microsoft 365 license.
+In this exercise, you'll enhance the Teams Message Extension and Copilot plugin by adding a new command. While the current message extension effectively provides information about products within the Northwind inventory database, it doesn't provide information related to Northwind’s customers. You'll introduce a new command associated with an API call that retrieves products ordered by a customer name specified by the user. This exercise assumes you have completed at least exercises 1, 2, and 3. It's fine to skip Exercise 4 in case you don't have a Microsoft 365 Copilot license.
 
 We'll go through the following tasks to accomplish this:
 
@@ -232,7 +232,7 @@ Now, lets modify the **products.ts** file to add the new search query.
 
 ## Task 5 - Run the App! Search for product by company name
 
-Now you're ready to test the sample as a plugin for Copilot for Microsoft 365.
+Now you're ready to test the sample as a plugin for Microsoft 365 Copilot.
 
 1. Remove the **Northwest Inventory** app in Teams. This task is necessary since you're updating the manifest. Manifest updates require the app to be reinstalled. The cleanest way to do this is to first remove it from Teams.
 
