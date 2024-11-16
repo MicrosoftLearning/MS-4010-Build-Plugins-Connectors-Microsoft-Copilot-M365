@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Exercise 1 - Create a message extension'
-    module: 'LAB 01: Connect Copilot for Microsoft 365 to your external data in real-time with message extension plugins built with .NET and Visual Studio'
+    module: 'LAB 01: Connect Microsoft 365 Copilot to your external data in real-time with message extension plugins built with .NET and Visual Studio'
 ---
 
 # Exercise 1 - Create a message extension

@@ -1,12 +1,12 @@
 ---
 lab:
     title: 'Summary'
-    module: 'LAB 02: Build your own message extension plugin with TypeScript (TS) for Microsoft Copilot'
+    module: 'LAB 02: Build your own message extension plugin with TypeScript (TS) for Microsoft 365 Copilot'
 ---
 
 # Summary
 
-In this module, you prepared your development environment for developing message extension plugins for Microsoft Copilot. This includes setting up a Microsoft 365 account with the necessary permissions and licenses, installing Visual Studio Code, NodeJS, Azure Storage Explorer, and the Teams Toolkit for Visual Studio Code. You also learned how to clone or download a sample repository from GitHub and copy the sample documents to your OneDrive.
+In this module, you prepared your development environment for developing message extension plugins for Microsoft 365 Copilot. This includes setting up a Microsoft 365 account with the necessary permissions and licenses, installing Visual Studio Code, NodeJS, Azure Storage Explorer, and the Teams Toolkit for Visual Studio Code. You also learned how to clone or download a sample repository from GitHub and copy the sample documents to your OneDrive.
 
 During the exercises, you ran an application as a plugin for Teams and Outlook, using the Northwind database stored in Azure Table Storage. You built the application using a connection string, ran it locally using Visual Studio Code, and tested it in Teams and Outlook. Additionally, you enhanced the Teams Message Extension and Copilot plugin by adding a new command to provide information related to Northwind’s customers.
 
@@ -14,7 +14,7 @@ By acquiring these new skills, you're now able to extend Copilot in your organiz
 
 ## Resources
 
-- [Extend Microsoft Copilot for Microsoft 365](https://learn.microsoft.com/microsoft-365-copilot/extensibility/)
+- [Extend Microsoft 365 Copilot](https://learn.microsoft.com/microsoft-365-copilot/extensibility/)
 
 - [Microsoft 365 Development](https://learn.microsoft.com/learn/modules/m365-setup-dev-environment/)
 
