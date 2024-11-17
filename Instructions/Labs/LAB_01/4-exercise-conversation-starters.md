@@ -4,7 +4,7 @@ lab:
     module: 'LAB 01: Build a declarative agent for Microsoft 365 Copilot using Visual Studio Code'
 ---
 
-# Exercise 2 - Add conversation starters to your declarative agent
+# Exercise 3 - Add conversation starters to your declarative agent
 
 In this exercise, you will update the declarative agent to include conversation starters that provide users with sample prompts to help them understand the types of questions they can ask.
 

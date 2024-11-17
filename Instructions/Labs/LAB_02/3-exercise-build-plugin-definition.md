@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Exercise 3 - Build API plugin definition'
+    title: 'Exercise 2 - Build API plugin definition'
     module: 'LAB 02: Build your first action for declarative agents with API plugin by using Visual Studio Code'
 ---
 

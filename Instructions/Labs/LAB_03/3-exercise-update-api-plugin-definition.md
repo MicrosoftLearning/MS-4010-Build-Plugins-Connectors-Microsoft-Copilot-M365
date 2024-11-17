@@ -6,7 +6,7 @@ lab:
 
 # Exercise 2 - Update the API plugin definition
 
-The final step is to update the API plugin definition with Adaptive Cards that Copilot should use to display data from the API to users.
+The next step is to update the API plugin definition with Adaptive Cards that Copilot should use to display data from the API to users.
 
 ### Exercise Duration
 

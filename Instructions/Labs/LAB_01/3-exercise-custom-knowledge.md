@@ -6,7 +6,7 @@ lab:
 
 # Exercise 2 - Configure custom knowledge
 
-In this exercise, you will update the declarative agent with custom knowledge.
+In this exercise, you use OneDrive as a substitute for SharePoint Online. When you upload documents to a new SharePoint Online site, there's a delay before the documents are indexed and available for use by Copilot. Using OneDrive allows you to test the agent immediately.
 
 ### Exercise Duration
 
@@ -15,8 +15,6 @@ In this exercise, you will update the declarative agent with custom knowledge.
 ## Task 1 - Prepare the grounding data
 
 Let's upload the documents to Microsoft 365 that the declarative agent uses as grounding data.
-
-In this exercise, you use OneDrive as a substitute for SharePoint Online. When you upload documents to a new SharePoint Online site, there's a delay before the documents are indexed and available for use by Copilot. Using OneDrive allows you to test the agent immediately.
 
 In a web browser:
 

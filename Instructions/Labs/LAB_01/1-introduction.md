@@ -16,11 +16,11 @@ Suppose you work in a customer support team. You and your team handle queries ab
 
 Here, you create a declarative agent which can answer product support questions using information stored in documents in Microsoft 365:
 
-- Create: Create a declarative agent project and use Teams Toolkit in Visual Studio Code.
-- Custom instructions: Shape responses by defining custom instructions.
-- Custom grounding: Add extra context to the agent by configuring grounding data.
-- Conversation starters: Define prompts for starting new conversations.
-- Provision: Upload your declarative agent to Microsoft 365 Copilot and validate the results.
+- **Create**: Create a declarative agent project and use Teams Toolkit in Visual Studio Code.
+- **Custom instructions**: Shape responses by defining custom instructions.
+- **Custom grounding**: Add extra context to the agent by configuring grounding data.
+- **Conversation starters**: Define prompts for starting new conversations.
+- **Provision**: Upload your declarative agent to Microsoft 365 Copilot and validate the results.
 
 ## Prerequisites
 
