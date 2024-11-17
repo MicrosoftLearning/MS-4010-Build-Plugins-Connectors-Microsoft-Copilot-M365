@@ -1,29 +1,34 @@
 ---
 lab:
     title: 'Introduction'
-    module: 'LAB 02: Build your own message extension plugin with TypeScript (TS) for Microsoft Copilot'
+    module: 'LAB 02: Build your first action for declarative agents with API plugin by using Visual Studio Code'
 ---
 
 # Introduction
 
-In this project, you'll learn to use Teams Message Extensions as plugins in Microsoft Copilot for Microsoft 365. The project is based on the "Northwind Inventory" sample contained in this same [GitHub repository](https://github.com/OfficeDev/Copilot-for-M365-Plugins-Samples/tree/main/samples/msgext-northwind-inventory-ts). By using the venerable [Northwind Database](https://learn.microsoft.com/dotnet/framework/data/adonet/sql/linq/downloading-sample-databases), you'll have plenty of simulated enterprise data to work with.
+Microsoft 365 Copilot agents let you create AI-powered assistants optimized for specific scenarios. Using instructions, you define the context for the agent and specify settings such as tone of voice or how it should respond. By configuring the agent's skills, you give it the ability to interact with external systems, trigger certain behavior under system conditions, or use custom workflow logic. One type of skill is actions that allow a declarative agent to communicate with APIs both for retrieving and modifying data.
 
-Northwind operates a specialty foods e-commerce business out of Spokane, Washington. In this lab, you'll be working with the Northwind Inventory application, which provides access to product inventory and financial information.
+![Diagram that shows the anatomy of a declarative agent for Microsoft 365 Copilot.](../media/LAB_02/1-anatomy-declarative-agent.png)
 
-This exercise should take approximately **60** minutes to complete.
+## Example scenario
 
-## Before you start
+Suppose you work in an organization, where you regularly order food from a local restaurant. The restaurant works with a daily menu which they publish on the Internet. You want to be able to quickly see what courses are available but also consider allergens in case you have guests. The restaurant exposes their menu via an API. Rather than building a separate app, you want to integrate the information into Microsoft 365 Copilot so that you can easily find the available dishes that you can order and find out their ingredients. You want to use natural language to browse through the menu and place orders.
 
-- [**Prepare**](./2-prepare-development-environment.md) first by setting up your development environment and getting the application running.
+## What will we be doing?
 
-- In [**Exercise 1**](./3-exercise-1-run-message-extension.md), you'll run the same application as a [message extension](https://learn.microsoft.com/microsoftteams/platform/messaging-extensions/what-are-messaging-extensions) in Microsoft Teams and Outlook.
+In this module, you build an action for a declarative agent with an API plugin. The action allows the agent to interact with an external system using its anonymous API. You learn to:
 
-- In [**Exercise 2**](./4-exercise-2-run-copilot-plugin.md), you'll run the application as a plugin for Copilot for Microsoft 365. You'll experiment with various prompts and you'll observe how the plugin gets invoked using different parameters. As you chat with Copilot, you can watch the developer console to see queries it's making.
+- **Create**: Create an API plugin that connects to an anonymous API.
+- **Configure**: Configure the API plugin to show the data from the API.
+- **Extend**: Extend a declarative agent with an action using an API plugin.
+- **Provision**: Upload your declarative agent to Microsoft 365 Copilot and validate the results.
 
-- In [**Exercise 3**](./5-exercise-3-add-new-command.md), you'll learn how to add a new command to the application, so that you can expand the plugin capabilities and perform more tasks.
+![Screenshot of a declarative agent that responds to a user with information from an external API.](../media/LAB_02/1-agent-response-api-plugin.png)
 
-  ![Screenshot of an adaptive card displaying a product.](../media/1-00-product-card-only.png)
+## Lab Duration
 
-- Finally, [**in Exercise 4**](./6-exercise-4-explore-plugin-source-code.md) you'll go on a tour of the code to see how it works in more depth. If you don't yet have Copilot, everything else will still work as a message extension for Microsoft 365.
+- **Estimated Time to complete**: 35 minutes
 
-When you're ready to begin, [continue to the next exercise...](./2-prepare-development-environment.md)
+## Learning objectives
+
+By the end of this module, you know how to integrate declarative agents with API plugins connected to anonymous APIs, to let them interact with external systems in real-time.
