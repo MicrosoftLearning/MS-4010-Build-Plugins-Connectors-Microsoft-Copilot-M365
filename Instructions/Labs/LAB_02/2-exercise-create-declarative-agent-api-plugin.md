@@ -88,7 +88,6 @@ In Visual Studio Code:
       name?: string;
       quantity?: number;
     }
-    
     interface Order {
       dishes: OrderedDish[];
     }
@@ -107,7 +106,6 @@ In Visual Studio Code:
         jsonBody: { message: "Invalid JSON format" },
       } as HttpResponseInit;
     }
-    
     if (!order.dishes || !Array.isArray(order.dishes)) {
       return {
         status: 400,
@@ -144,7 +142,6 @@ In Visual Studio Code:
 
     ```typescript
     const orderId = Math.floor(Math.random() * 10000);
-    
     return {
       status: 201,
       jsonBody: {

@@ -21,7 +21,7 @@ In this module, you extend an existing API plugin for a declarative agent to ren
 - **Configure**: Configure the API plugin to render the data using the Adaptive Card template.
 - **Provision**: Upload your declarative agent to Microsoft 365 Copilot and validate the results.
 
-![Screenshot of a declarative agent that responds to a user with information from an external API using an Adaptive Card.](../media/1-agent-response-adaptive-card-dish.png)
+![Screenshot of a declarative agent that responds to a user with information from an external API using an Adaptive Card.](../media/LAB_03/1-agent-response-adaptive-card-dish.png)
 
 ## Lab Duration
 

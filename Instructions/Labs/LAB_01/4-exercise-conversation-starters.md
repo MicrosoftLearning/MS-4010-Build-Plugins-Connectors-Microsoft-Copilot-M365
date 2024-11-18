@@ -117,6 +117,6 @@ Continuing in the web browser:
 1. In **Microsoft 365 Copilot**, select the icon in the top right to expand the **Copilot side panel**.
 1. Find **Product support** in the list of agents and select it to enter the immersive experience to chat directly with the agent. Notice that the conversation starters you defined in the manifest display in the user interface.
 
-![Screenshot of Microsoft Edge showing the Product support declarative agent in the immersive experience with custom conversation starters.](../media/test-conversation-starters.png)
+![Screenshot of Microsoft Edge showing the Product support declarative agent in the immersive experience with custom conversation starters.](../media/LAB_01/test-conversation-starters.png)
 
 Close the browser to stop the debug session in Visual Studio Code.
