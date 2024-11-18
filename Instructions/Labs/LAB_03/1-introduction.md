@@ -1,32 +1,24 @@
 ---
 lab:
     title: 'Introduction'
-    module: 'LAB 03: Use Adaptive Cards to show data in API plugins for declarative agents'
+    module: 'LAB 02: Integrate external content with Copilot for Microsoft 365 using Microsoft Graph connectors built with .NET'
 ---
 
 # Introduction
 
-By extending declarative agents with actions, you can connect them to external systems and services through their APIs. Connecting an agent to your existing systems can help you automate tasks and get insights using natural language. To improve the user experience, you can use Adaptive Cards to render information that the agent retrieves from APIs in a visually appealing way.
+Suppose you have an external system where you store knowledge base articles. These articles contain information about different processes in your organization. You want to be able to easily find and discover relevant information from Microsoft 365. You also want Copilot for Microsoft 365 to include information from these knowledge base articles in its responses.
 
-## Example scenario
+To expose this external information inside Microsoft 365, you'll build a custom Microsoft Graph connector. Microsoft Graph connectors connect to your external system (1) to retrieve content, use the information from Microsoft Entra ID to authenticate with Microsoft 365 (2) and import the content to Microsoft 365 using the Microsoft Graph API (3).
 
-Suppose you've recently built a declarative agent that integrates with an API of a local restaurant. Using the agent you can browse today's menu and place an order using natural language. The restaurant's API provides a detailed list of dishes, their ingredients, and allergens. You want to enhance the agent's responses by rendering the information about dishes using Adaptive Cards. You also want to render the order summary using an Adaptive Card to provide a visual representation of the order. By using Adaptive Cards, you can include images, text, and buttons to make the information more engaging.
+![Diagram that shows conceptual working of a Microsoft Graph connector.](../media/1-graph-connector-concept.png)
 
-## What will we be doing?
+In this module, you learn what Microsoft Graph connectors are and why you should consider using them in your organization. You build a Microsoft Graph connector that imports local markdown files to Microsoft 365. You also learn about how to ensure that the external content you import is accessible only to individuals with appropriate assigned permissions. Finally, you optimize your Microsoft Graph connector for use with Copilot for Microsoft 365.
 
-In this module, you extend an existing API plugin for a declarative agent to render information that it receives from an API using Adaptive Cards. You learn to:
+## Prerequisites
 
-- **Create**: Create an Adaptive Card template that shows the data from the API.
-- **Verify**: Verify that the Adaptive Card template correctly renders API data.
-- **Configure**: Configure the API plugin to render the data using the Adaptive Card template.
-- **Provision**: Upload your declarative agent to Microsoft 365 Copilot and validate the results.
+- Basic knowledge of C#
+- Basic knowledge of authentication
+- Access to a [Microsoft 365 developer tenant](https://developer.microsoft.com/microsoft-365/dev-program?ocid=MSlearn)
+- [.NET 8.0](https://dotnet.microsoft.com/download/dotnet/8.0)
 
-![Screenshot of a declarative agent that responds to a user with information from an external API using an Adaptive Card.](../media/LAB_03/1-agent-response-adaptive-card-dish.png)
-
-## Lab Duration
-
-- **Estimated Time to complete**: 35 minutes
-
-## Learning objectives
-
-By the end of this module, you know how to build Adaptive Card templates for use with declarative agents. You can verify that the templates render the data correctly and configure the API plugin to use the templates.
+When you're ready to begin, [continue to the next exercise...](./2-exercise-configure-connection-schema.md)
