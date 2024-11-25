@@ -1,59 +1,43 @@
 ---
 lab:
     title: 'Introduction'
-    module: 'LAB 01: Connect Microsoft 365 Copilot to your external data in real-time with message extension plugins built with .NET and Visual Studio'
+    module: 'LAB 01: Build a declarative agent for Microsoft 365 Copilot using Visual Studio Code'
 ---
 
 # Introduction
 
-Message extensions let users work with external systems from Microsoft Teams and Microsoft Outlook. Users can use message extensions to look up, change and share data from these systems in messages and emails as a rich formatted card.
+Use declarative agents to extend Microsoft 365 Copilot. You define custom knowledge to create agents that can answer questions using authoritative content.
 
-Suppose you have a custom API that you use to access product information that is current and relevant to your organization. You want to search and share this information across Microsoft 365. You also want Microsoft 365 Copilot to use this information in its answers.
+## Example scenario
 
-In this module, you create a message extension. Your message extension uses a bot to communicate with Microsoft Teams, Microsoft Outlook, and Microsoft 365 Copilot.
+Suppose you work in a customer support team. You and your team handle queries about products that your organization makes from customers. You want to improve response times and provide a better experience. You store documents in a document library on a SharePoint Online site that contains product specifications, frequently asked questions, and policies for handling repairs, returns, and warranties. You want to be able to use natural language to query information in these documents and get answers quickly to customer queries.
 
-![Screenshot of search results returned by a search based message extension in Microsoft Teams.](../media/1-search-results.png)
+## What will we be doing?
 
-It uses Microsoft Entra to authenticate users, which enables it to return data from the API on their behalf.
+Here, you create a declarative agent which can answer product support questions using information stored in documents in Microsoft 365:
 
-After the user authenticates, your message extension will get data from the API and return search results that can be embedded into messages and emails as a rich formatted card, and then shared.
-
-![Screenshot of search results that use data from an external API in Microsoft Teams.](../media/3-search-results-api.png)
-
-![Screenshot of search result that is embedded in a message in Microsoft Teams.](../media/4-adaptive-card.png)
-
-It works with Microsoft 365 Copilot as a plugin, enabling it to query the product data on behalf of the user and use the returned data in its answers.
-
-![Screenshot of an answer in Microsoft 365 Copilot that contains information returned by the message extension plugin. An adaptive card is displayed showing product information.](../media/5-copilot-answer.png)
-
-By the end of this module, you're able to create message extensions written in C# (running on .NET). It can be used in Microsoft Teams, Microsoft Outlook, and Microsoft 365 Copilot. It can query data behind protected APIs and return the results as rich formatted cards.
+- **Create**: Create a declarative agent project and use Teams Toolkit in Visual Studio Code.
+- **Custom instructions**: Shape responses by defining custom instructions.
+- **Custom grounding**: Add extra context to the agent by configuring grounding data.
+- **Conversation starters**: Define prompts for starting new conversations.
+- **Provision**: Upload your declarative agent to Microsoft 365 Copilot and validate the results.
 
 ## Prerequisites
 
-- Basic knowledge of C#
-- Basic knowledge of Bicep
-- Basic knowledge of authentication
-- Administrator access to a Microsoft 365 tenant
-- Access to an Azure subscription
-- Access to Microsoft 365 Copilot is optional and required only to complete **Exercise 4: Task 5**.
-- Visual Studio 2022 17.10+ with [Teams Toolkit](/microsoftteams/platform/toolkit/toolkit-v4/teams-toolkit-fundamentals-vs) (Microsoft Teams development tools component) installed
-- [.NET 8.0](https://dotnet.microsoft.com/download/dotnet/8.0)
-- [Dev Proxy 0.19.1+](https://aka.ms/devproxy)
-
-> [!NOTE]
-> The only exercise in this lab that requires a Microsoft 365 Copilot license is **Exercise 4: Task 5**. Everything up to that point should be done whether your tenant has Copilot or not.
+- Basic knowledge of what Microsoft 365 Copilot is and how it works
+- Basic knowledge of what a declarative agent for Microsoft 365 Copilot is
+- Microsoft 365 tenant with Microsoft 365 Copilot
+- Account with rights to upload custom apps to Microsoft Teams
+- Access to a Microsoft 365 tenant with Microsoft 365 Copilot
+- [Visual Studio Code](https://code.visualstudio.com/) with the [Teams Toolkit](https://marketplace.visualstudio.com/items?itemName=TeamsDevApp.ms-teams-vscode-extension) extension installed
+- [Node.js v18](https://nodejs.org/en/download/package-manager)
 
 ## Lab Duration
 
-  - **Estimated Time to complete**: 150 minutes
+- **Estimated Time to complete**: 30 minutes
 
 ## Learning objectives
 
-At the end of this module, you should be able to:
+By the end of this module, you're able to create a declarative agent, upload it to Microsoft 365, then use it in Microsoft 365 Copilot to validate the results.
 
-- Understand what message extensions are and how to build them.
-- Create a message extension.
-- Understand how to authenticate users using single sign-on and call a custom API protected with Microsoft Entra authentication.
-- Understand how to extend and optimize message extensions for use with Microsoft 365 Copilot.
-
-When you're ready to begin, [continue to the first exercise...](./2-exercise-create-a-message-extension.md)
+When you're ready to begin, [continue to the first exercise...](./2-exercise-create-declarative-agent.md)
