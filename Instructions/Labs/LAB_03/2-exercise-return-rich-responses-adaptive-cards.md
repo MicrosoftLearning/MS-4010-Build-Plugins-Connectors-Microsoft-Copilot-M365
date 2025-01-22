@@ -41,10 +41,10 @@ In Visual Studio Code:
   }
   ```
 
-1. Before you continue, from the **Extensions** tab of the activity bar, search for and install the **Adpative Card Previewer** extension and then create a data file for the Adaptive Card:
+1. Before you continue, from the **Extensions** tab of the activity bar, search for and install the **Adaptive Card Previewer** extension and then create a data file for the Adaptive Card:
   1. Open the command palette by pressing <kbd>CTRL</kbd>+<kbd>P</kbd> on the keyboard. Type `>Adaptive` to find commands related to working with Adaptive Cards.
 
-    ![Screenshot of Visual Studio Code showing commands related to working with Adaptive Cards.](../media/LAB_03/LAB_03/3-visual-studio-code-adaptive-card-commands.png)
+    ![Screenshot of Visual Studio Code showing commands related to working with Adaptive Cards.](../media/LAB_03/3-visual-studio-code-adaptive-card-commands.png)
 
   1. From the list, choose **Adaptive Card: New Data File**. Visual Studio Code creates a new file named **dish.data.json**.
   1. Replace its contents with a data that represents a dish:
@@ -68,7 +68,7 @@ In Visual Studio Code:
 1. Go back to the **dish.json** file.
 1. From the lens, select **Preview Adaptive Card**.
 
-  ![Screenshot of Visual Studio Code showing the Adaptive Card preview.](../media/LAB_03/LAB_03/3-visual-studio-code-adaptive-card-preview.png)
+  ![Screenshot of Visual Studio Code showing the Adaptive Card preview.](../media/LAB_03/3-visual-studio-code-adaptive-card-preview.png)
 
   Visual Studio Code opens a preview of the card to the side. As you're editing the card, your changes are immediately visible on the side.
 
